@@ -18,13 +18,11 @@
   <br>
   <br>
 
-  <h3 align="center"> ¿Quieres buscar un Pokemón por su ID?</h3>
+  <h3 align="center"> Se muestra todos los nombres de las plazas que contengan al menos una escultura de "Gian Lorenzo Bernini"</h3>
 
-  <form align="center" action="consultas/consulta_stats.php" method="post">
-    Id:
-    <input type="text" name="id_elegido">
-    <br/><br/>
-    <input type="submit" value="Buscar">
+  <form align="center" action="consultas/consulta_gian_lorenzo.php" method="post">
+
+    <input type="submit" value="Consultar">
   </form>
   
   <br>
