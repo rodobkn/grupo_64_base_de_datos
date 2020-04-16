@@ -11,7 +11,7 @@
 
   #Se construye la consulta como un string
  	$query = "SELECT DISTINCT nombre_lugar FROM Ciudades_contacto_paises, Lugares_ciudades, Lugares, Museos, Lugares_Obras, Obras 
-   WHERE Ciudades_contacto_paises.id_ciudad = Lugares_ciudades.id_ciudad AND LOWER(Ciudades_contacto_paises.pais) = LOWER('$pais') 
+   WHERE Ciudades_contacto_paises.id_ciudad = Lugares_ciudades.id_ciudad AND LOWER(Ciudades_contacto_paises.pais) LIKE LOWER('%$pais%') 
    AND Lugares_ciudades.id_lugar = Lugares.id_lugar 
    AND Lugares.id_lugar = Museos.id_lugar 
    AND Museos.id_lugar = Lugares_Obras.id_lugar 
