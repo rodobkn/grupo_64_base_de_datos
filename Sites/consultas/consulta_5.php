@@ -13,7 +13,7 @@
   $query = "SELECT nombre_lugar, nombre_obra FROM Iglesias, Lugares, Lugares_ciudades, Ciudades, Lugares_Obras, Frescos, Obras 
   WHERE Lugares.id_lugar = Iglesias.id_lugar AND hora_apertura >= '$hora_1' AND hora_cierre <= '$hora_2' 
   AND Iglesias.id_lugar = Lugares_ciudades.id_lugar 
-  AND Lugares_ciudades.id_ciudad = Ciudades.id_ciudad AND LOWER(Ciudades.ciudad) LIKE LOWER('$ciudad') 
+  AND Lugares_ciudades.id_ciudad = Ciudades.id_ciudad AND LOWER(Ciudades.ciudad) LIKE LOWER('%$ciudad%') 
   AND Iglesias.id_lugar = Lugares_Obras.id_lugar
    AND Lugares_Obras.id_obra = Frescos.id_obra 
   AND Frescos.id_obra = Obras.id_obra
