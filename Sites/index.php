@@ -8,7 +8,7 @@
 
   <h3 align="center"> Se muestra todos los nombres distintos de las obras de arte</h3>
 
-  <form align="center" action="consultas/consulta_1" method="post">
+  <form align="center" action="consultas/consulta_1.php" method="post">
 
     <input type="submit" value="Consultar">
     
@@ -59,8 +59,10 @@
   <form align="center" action="consultas/consulta_5.php" method="post">
     Ciudad:
     <input type="text" name="ciudad">
+    <br>
     Horario de apertura:
     <input type="text" name="horario_1">
+    <br>
     Horario de salida:
     <input type="text" name="horario_2">
     <br/><br/>
