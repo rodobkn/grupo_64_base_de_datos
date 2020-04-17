@@ -51,13 +51,7 @@
 
         </div>
       </div>
-      <!-- Slide Three - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('images_bdd/da_vinci.jpg')">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4" id="da_vinci">También todas las obras del polímata Leonardo Da Vinci</h2>
-
-        </div>
-      </div>
+    
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
