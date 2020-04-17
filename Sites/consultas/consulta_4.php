@@ -12,16 +12,44 @@
   $artistas_num_obras = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
   ?>
 
-  <table>
-    <tr>
-      <th>Artistas</th>
-      <th>Número de obras</th>
-    </tr>
-  <?php
-  foreach ($artistas_num_obras as $fila) {
-    echo "<tr> <td>$fila[0]</td> <td>$fila[1]</td>  </tr>";
-  }
-  ?>
-  </table>
+
+
+<div class="container">
+
+  <div class="card">
+      <div class="card-header">
+          CONSULTA 4) A continuación se mostrarán todos los artistas disponibles en la base de datos, con la cantidad de obras pertenecientes a cada uno.
+      </div>
+
+      <div class="card-body">
+      <h5 class="card-title">La consulta pedida es la siguiente:</h5>
+
+      <table class="table">
+          <thead class="thead-dark">
+          <tr>
+              <th scope="col">Artistas</th>
+              <th scope="col">Número de obras</th>
+          </tr>
+          </thead>
+          <tbody>
+              <!-- <th scope="row">1</th> -->
+
+              <?php
+              foreach ($artistas_num_obras as $fila) {
+                echo "<tr> <td>$fila[0]</td> <td>$fila[1]</td>  </tr>";
+                }
+              ?>
+
+
+          </tbody>
+      </table>
+
+
+      </div>
+  </div>
+</div>
+
+
+
 
 <?php include('../templates/footer.html'); ?>

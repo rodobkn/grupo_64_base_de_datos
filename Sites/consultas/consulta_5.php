@@ -17,26 +17,53 @@
   AND Iglesias.id_lugar = Lugares_Obras.id_lugar
    AND Lugares_Obras.id_obra = Frescos.id_obra 
   AND Frescos.id_obra = Obras.id_obra
-   GROUP BY nombre_lugar,nombre_obra;
-  ";
+   GROUP BY nombre_lugar,nombre_obra;";
   $result = $db -> prepare($query);
   $result -> execute();
   $iglesia_fresco = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
 
 ?>
 
-<table>
-    <tr>
-      <th>Nombre de la Iglesia</th>
-      <th>Fresco asociado</th>
-    </tr>
-  
-      <?php
-        foreach ($iglesia_fresco as $fila) {
-          echo "<tr> <td>$fila[0]</td> <td>$fila[1]</td> <td>$fila[2]</td></tr>";
-      }
-      ?>
-      
-  </table>
+
+
+
+<div class="container">
+
+  <div class="card">
+      <div class="card-header">
+          CONSULTA 5) A continuación se mostrarán todas las iglesias ubicadas en <?php echo"$ciudad , que están abiertas desde las $hora_1 hasta las $hora_2" ?>, con sus frescos respectivos.   
+      </div>
+
+      <div class="card-body">
+      <h5 class="card-title">La consulta pedida es la siguiente:</h5>
+
+      <table class="table">
+          <thead class="thead-dark">
+          <tr>
+              <th scope="col">Iglesia</th>
+              <th scope="col">Fresco asociado</th>
+          </tr>
+          </thead>
+          <tbody>
+              <!-- <th scope="row">1</th> -->
+
+              <?php
+              foreach ($iglesia_fresco as $fila) {
+                echo "<tr> <td>$fila[0]</td> <td>$fila[1]</td> <td>$fila[2]</td></tr>";
+                }
+              ?>
+
+
+          </tbody>
+      </table>
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
 
   <?php include('../templates/footer.html'); ?>

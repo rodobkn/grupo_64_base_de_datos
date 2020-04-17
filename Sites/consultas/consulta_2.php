@@ -19,17 +19,52 @@
 	$result = $db -> prepare($query);
 	$result -> execute();
 	$nombres_plazas = $result -> fetchAll();
-  ?>
+?>
 
-	<table>
-    <tr>
-      <th>Nombres de la plaza</th>
-    </tr>
-  <?php
-	foreach ($nombres_plazas as $plaza) {
-  		echo "<tr> <td>$plaza[0]</td> </tr>";
-	}
-  ?>
-	</table>
+
+
+
+
+<div class="container">
+
+  <div class="card">
+      <div class="card-header">
+          CONSULTA 2) A continuación se mostrarán todas las plazas que contengan al menos una escultura del gran Gian Lorenzo Bernini.
+      </div>
+
+      <div class="card-body">
+      <h5 class="card-title">La consulta pedida es la siguiente:</h5>
+
+      <table class="table">
+          <thead class="thead-dark">
+          <tr>
+              <th scope="col">Plazas</th>
+          </tr>
+          </thead>
+          <tbody>
+              <!-- <th scope="row">1</th> -->
+
+    
+              <?php
+              foreach ($nombres_plazas as $plaza) {
+                  echo "<tr> <td>$plaza[0]</td> </tr>";
+              }
+              ?>
+
+
+          </tbody>
+      </table>
+
+
+      </div>
+  </div>
+</div>
+  
+
+
+
+
+
+  
 
 <?php include('../templates/footer.html'); ?>

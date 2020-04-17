@@ -24,17 +24,44 @@
 	$lista_museos = $result -> fetchAll();
   ?>
 
-  <table>
-    <tr>
-      <th>Museos</th>
-    </tr>
-  
-      <?php
-        foreach ($lista_museos as $museo) {
-          echo "<tr> <td>$museo[0]</td> </tr>";
-      }
-      ?>
-      
-  </table>
+
+
+<div class="container">
+
+  <div class="card">
+      <div class="card-header">
+          CONSULTA 3) A continuación se mostrarán todos los museos del pais <?php echo"$pais" ?> que tengan obras del renacimiento.
+      </div>
+
+      <div class="card-body">
+      <h5 class="card-title">La consulta pedida es la siguiente:</h5>
+
+      <table class="table">
+          <thead class="thead-dark">
+          <tr>
+              <th scope="col">Museos</th>
+          </tr>
+          </thead>
+          <tbody>
+              <!-- <th scope="row">1</th> -->
+
+              <?php
+              foreach ($lista_museos as $museo) {
+                  echo "<tr> <td>$museo[0]</td> </tr>";
+                }
+              ?>
+
+
+          </tbody>
+      </table>
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
 
 <?php include('../templates/footer.html'); ?>

@@ -28,4 +28,45 @@
   ?>
   </table>
 
+
+
+<div class="container">
+
+  <div class="card">
+      <div class="card-header">
+          CONSULTA 6) A continuación se el/los nombre/s de los lugares que contienen obras de arte de todos los periodos existentes en la base de datos.   
+      </div>
+
+      <div class="card-body">
+      <h5 class="card-title">La consulta pedida es la siguiente:</h5>
+
+      <table class="table">
+          <thead class="thead-dark">
+          <tr>
+              <th scope="col">Lugares</th>
+          </tr>
+          </thead>
+          <tbody>
+              <!-- <th scope="row">1</th> -->
+
+              <?php
+              foreach ($lugares as $lugar) {
+                echo "<tr> <td>$lugar[0]</td>  </tr>";
+                }
+              ?>
+
+
+          </tbody>
+      </table>
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
 <?php include('../templates/footer.html'); ?>

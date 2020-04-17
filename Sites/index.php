@@ -1,92 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <?php include('templates/header.html');   ?>
 
-<body>
-  <h1 align="center">Bases de datos para colecciones de arte! </h1>
-  <p style="text-align:center;">Aquí podrás encontrar información sobre las más famosas obras de arte!.</p>
+<body id="page-top">
 
-  <br>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Colecciones de arte</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">Consultas simples</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Consultas con ingreso</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <h3 align="center"> Se muestra todos los nombres distintos de las obras de arte</h3>
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Bienvenido a la mejor base de datos de colecciones de arte!</h1>
+      <p class="lead">Aquí podrás encontrar información de distintas obras de arte del mundo entero.
+        Asimismo te enseñaremos en que lugares las puedes encontrar, junto con los horarios respectivos de cada local, para que puedas diseñar tu aventura como quieras.
+      </p>
+    </div>
+  </header>
 
-  <form align="center" action="consultas/consulta_1.php" method="post">
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h1>Consultas simples</h1>
+          <p class="lead">En esta sección, podrás hacer consultas simples, es decir, que no tienes que hacer un ingreso de ningún dato, simplemente consultar. Por lo que podrás encontrar las consultas 1, 2, 4, 6 de la entrega 2 para grupos pares.</p>
+          
+          <h4><span class="font-weight-bold">1)</span> Se muestra todas las obras de arte disponibles, con distinto nombre.</h4>
 
-    <input type="submit" value="Consultar">
-    
-  </form>
-  
-  <br>
-  <br>
-  <br>
+          <form align="center" action="consultas/consulta_1.php" method="post">
 
-  <h3 align="center"> Se muestra todos los nombres de las plazas que contengan al menos una escultura de "Gian Lorenzo Bernini"</h3>
+            <input type="submit" class="btn btn-outline-dark" value="Consultar">
+            
+          </form>
 
-  <form align="center" action="consultas/consulta_2.php" method="post">
+          <br>
+          <br>
 
-    <input type="submit" value="Consultar">
-  </form>
-  
-  <br>
-  <br>
-  <br>
+          <h4><span class="font-weight-bold">2)</span> Se muestra todos los nombres de las plazas que contengan al menos una escultura del gran "Gian Lorenzo Bernini"</h4>
 
-  <h3 align="center"> Buscar museos que tengan obras del renacimiento por país.</h3>
+          <form align="center" action="consultas/consulta_2.php" method="post">
 
-  <form align="center" action="consultas/consulta_3.php" method="post">
-    País:
-    <input type="text" name="pais">
-    <br/><br/>
-    <input type="submit" value="Buscar">
-  </form>
-  <br>
-  <br>
-  <br>
+            <br>
 
-  <h3 align="center">A continuación se podrá consultar a los artistas con el numero de obras que tienen respectivamente</h3>
+            <input type="submit" class="btn btn-outline-info" value="Consultar">
+          </form>
 
-  <form align="center" action="consultas/consulta_4.php" method="post">
+          <br>
+          <br>
 
-    <input type="submit" value="Consultar">
-  </form>
+          <h4><span class="font-weight-bold">4)</span> A continuación se podrá consultar a los artistas, junto con la cantidad de obras que tienen respectivamente</h4>
 
-  <br>
-  <br>
-  <br>
+          <form align="center" action="consultas/consulta_4.php" method="post">
 
-  <h3 align="center"> Si quiere buscar iglesias en un horario de funcionamiento que usted indique, ésta es la consulta. <br>
-  Además se muestran junto a sus frescos.</h3>
-  
+            <br>
+            <input type="submit" class="btn btn-outline-dark" value="Consultar">
+          </form>
+        
+          <br>
+          <br>
 
-  <form align="center" action="consultas/consulta_5.php" method="post">
-    Ciudad:
-    <input type="text" name="ciudad">
-    <br>
-    Horario de apertura:
-    <input type="text" name="horario_1">
-    <br>
-    Horario de salida:
-    <input type="text" name="horario_2">
-    <br/><br/>
-    <input type="submit" value="Buscar">
-  </form>
+          <h4><span class="font-weight-bold">6)</span> A continuación se podrá consultar el lugar que contiene obras de todos los periodos 
+            existentes en la base de datos.</h4>
+          
+            <form align="center" action="consultas/consulta_6.php" method="post">
+              <br>
+              <input type="submit" class="btn btn-outline-info" value="Consultar">
+            </form>
 
 
-  <br>
-  <br>
-  <br>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h3 align="center">A continuación se podrá consultar el lugar que contiene obras de todos los periodos 
-  que existen en la base de datos.</h3>
+  <section id="services" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Consultas con ingreso</h2>
+          <p class="lead">En esta sección podrás hacer consultas con distintos datos que quiera ingresar. Por lo que acá están alojadas las consultas 3 y 5 de la entrega 2 de los grupos pares.</p>
 
-  <form align="center" action="consultas/consulta_6.php" method="post">
+          <h4>3) Buscar museos que tengan obras del renacimiento por país.</h4>
 
-    <input type="submit" value="Consultar">
-  </form>
+          <form align="center" action="consultas/consulta_3.php" method="post">
+            <br>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">País</span>
+              </div>
+              <input type="text" name="pais" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <br/>
+            <input type="submit" class="btn btn-outline-dark" value="Buscar">
+          </form>
+          <br>
+          <br>
+
+          <h3>5) Se permite buscar iglesias en el horario de funcionamiento que usted indique. <br>
+            Además, se muestran junto a sus frescos.</h3>
+            
+          
+          <form align="center" action="consultas/consulta_5.php" method="post">
+            <br>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Ciudad</span>
+              </div>
+              <input type="text" name="ciudad" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Horario apertura</span>
+              </div>
+              <input type="text" name="horario_1" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Horario de salida</span>
+              </div>
+              <input type="text" name="horario_2" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <br>
+
+            <input type="submit" class="btn btn-outline-info" value="Buscar">
+          </form>
 
 
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <br>
-  <br>
-  <br>
-  <br>
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Contacto</h2>
+          <p class="lead">Nathalie Germani: ngermani@uc.cl <br> Rodolfo Mendoza: rrmendoza@uc.cl</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Grupo 64</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+
 </body>
+
 </html>
