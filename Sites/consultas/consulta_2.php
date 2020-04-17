@@ -21,7 +21,8 @@
 	$nombres_plazas = $result -> fetchAll();
 ?>
 
-
+<br>
+<br>
 
 
 
@@ -33,7 +34,7 @@
       </div>
 
       <div class="card-body">
-      <h5 class="card-title">La consulta pedida es la siguiente:</h5>
+
 
       <table class="table">
           <thead class="thead-dark">

@@ -55,7 +55,7 @@
           <br>
           <br>
 
-          <h4><span class="font-weight-bold">2)</span> Se muestra todos los nombres de las plazas que contengan al menos una escultura del gran "Gian Lorenzo Bernini"</h4>
+          <h4><span class="font-weight-bold">2)</span> Se muestra todos los nombres de las plazas que contengan al menos una escultura del gran "Gian Lorenzo Bernini".</h4>
 
           <form align="center" action="consultas/consulta_2.php" method="post">
 
@@ -67,7 +67,7 @@
           <br>
           <br>
 
-          <h4><span class="font-weight-bold">4)</span> A continuación se podrá consultar a los artistas, junto con la cantidad de obras que tienen respectivamente</h4>
+          <h4><span class="font-weight-bold">4)</span> A continuación se podrá consultar a los artistas, junto con la cantidad de obras que tienen respectivamente.</h4>
 
           <form align="center" action="consultas/consulta_4.php" method="post">
 

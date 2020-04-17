@@ -17,18 +17,9 @@
   $lugares = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
   ?>
 
-  <table>
-    <tr>
-      <th>Lugares</th>
-    </tr>
-  <?php
-  foreach ($lugares as $lugar) {
-    echo "<tr> <td>$lugar[0]</td>  </tr>";
-  }
-  ?>
-  </table>
 
-
+<br>
+<br>
 
 <div class="container">
 
@@ -38,7 +29,7 @@
       </div>
 
       <div class="card-body">
-      <h5 class="card-title">La consulta pedida es la siguiente:</h5>
+
 
       <table class="table">
           <thead class="thead-dark">

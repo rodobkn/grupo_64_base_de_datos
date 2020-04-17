@@ -24,7 +24,8 @@
 
 ?>
 
-
+<br>
+<br>
 
 
 <div class="container">
@@ -35,7 +36,7 @@
       </div>
 
       <div class="card-body">
-      <h5 class="card-title">La consulta pedida es la siguiente:</h5>
+
 
       <table class="table">
           <thead class="thead-dark">

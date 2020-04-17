@@ -24,17 +24,18 @@
 	$lista_museos = $result -> fetchAll();
   ?>
 
-
+<br>
+<br>
 
 <div class="container">
 
   <div class="card">
       <div class="card-header">
-          CONSULTA 3) A continuación se mostrarán todos los museos del pais <?php echo"$pais" ?> que tengan obras del renacimiento.
+          CONSULTA 3) A continuación se mostrarán todos los museos de <?php echo"$pais" ?> que tengan obras del renacimiento.
       </div>
 
       <div class="card-body">
-      <h5 class="card-title">La consulta pedida es la siguiente:</h5>
+  
 
       <table class="table">
           <thead class="thead-dark">
