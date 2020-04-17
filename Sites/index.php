@@ -45,14 +45,14 @@
         </div>
       </div>
       <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('images_bdd/gian_lorenzo.png')">
+      <div class="carousel-item" style="background-image: url('images_bdd/gian.jpg')">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">Encontrarás obras del gran Gian Lorenzo Bernini</h2>
 
         </div>
       </div>
       <!-- Slide Three - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('images_bdd/mona_lisa.jpg')">
+      <div class="carousel-item" style="background-image: url('images_bdd/da_vinci.jpg')">
         <div class="carousel-caption d-none d-md-block">
           <h2 class="display-4">También todas las obras del polímata Leonardo Da Vinci</h2>
 
