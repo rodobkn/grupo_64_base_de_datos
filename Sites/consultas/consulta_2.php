@@ -75,4 +75,4 @@
 <!-- Custom JavaScript for this theme -->
 <script src="js/scrolling-nav.js"></script>
 
-</body>
+
