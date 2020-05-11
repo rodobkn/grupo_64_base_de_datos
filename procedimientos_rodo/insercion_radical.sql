@@ -4,9 +4,16 @@ RETURNS void AS $$
 DECLARE
 temp varchar;
 BEGIN
-FOR i IN 1..numero LOOP
-temp := to_char(i,'99999999');
-insert into personas values (temp,temp,temp);
-END LOOP;
+	FOR i IN 1..numero LOOP
+
+		IF i>8 THEN
+			temp := to_char(i,'99999999');
+			insert into personas values (temp,temp,temp);
+		ELSE
+			PRINT 'hola';
+
+		END IF;
+
+	END LOOP;
 END
 $$ language plpgsql
