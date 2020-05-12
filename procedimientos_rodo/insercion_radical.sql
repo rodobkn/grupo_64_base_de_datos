@@ -9,8 +9,6 @@ BEGIN
 		IF i>8 THEN
 			temp := to_char(i,'99999999');
 			insert into personas values (temp,temp,temp);
-		ELSE
-			PRINT 'hola';
 
 		END IF;
 
