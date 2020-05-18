@@ -7,11 +7,12 @@
   require("../config/conexion.php");
 
 
- 	$query = "SELECT DISTINCT lower(nombre_obra) FROM Obras;";
+ 	$query = "SELECT nombre_artista FROM Artistas;";
 	$result = $db_par -> prepare($query);
 	$result -> execute();
-	$obras = $result -> fetchAll();
+	$artistas = $result -> fetchAll();
   ?>
+
 
 <br>
 <br>
@@ -20,7 +21,7 @@
 
 	<div class="card">
 		<div class="card-header">
-			CONSULTA 1) A continuación se mostrarán las obras de arte contenida en la base de datos con distintos nombres.
+			A continuación se mostrarán todos los artistas contenidos en nuestra base de datos.
 		</div>
 
 		<div class="card-body">
@@ -28,7 +29,7 @@
 		<table class="table">
 			<thead class="thead-dark">
 			<tr>
-				<th scope="col">Nombres de las obras de arte</th>
+				<th scope="col">Nombre del artista</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -36,8 +37,8 @@
 
 				
 				<?php
-				foreach ($obras as $obra) {
-					echo "<tr> <td>$obra[0]</td> </tr>";
+				foreach ($artistas as $artista) {
+					echo "<tr> <td>$artista[0]</td> </tr>";
 				}
 				?>
 
@@ -65,4 +66,3 @@
 
 <!-- Custom JavaScript for this theme -->
 <script src="js/scrolling-nav.js"></script>
-

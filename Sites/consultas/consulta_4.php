@@ -7,7 +7,7 @@
 
   $query = "SELECT artistas.nombre_artista, COUNT(*) FROM artistas, artistas_obras 
   WHERE artistas.id_artista = artistas_obras.id_artista GROUP BY artistas.id_artista;";
-  $result = $db -> prepare($query);
+  $result = $db_par -> prepare($query);
   $result -> execute();
   $artistas_num_obras = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
   ?>

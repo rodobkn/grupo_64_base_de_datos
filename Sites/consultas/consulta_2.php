@@ -16,7 +16,7 @@
             AND Obras.id_obra = Artistas_Obras.id_obra 
             AND Artistas_Obras.id_artista = Artistas.id_artista 
             AND Artistas.nombre_artista = 'Gian Lorenzo Bernini';";
-	$result = $db -> prepare($query);
+	$result = $db_par -> prepare($query);
 	$result -> execute();
 	$nombres_plazas = $result -> fetchAll();
 ?>

@@ -18,8 +18,9 @@
    AND Lugares_Obras.id_obra = Obras.id_obra AND LOWER(Obras.periodo) = 'renacimiento';
    ";
 
+
   #Se prepara y ejecuta la consulta. Se obtienen TODOS los resultados
-	$result = $db -> prepare($query);
+	$result = $db_par -> prepare($query);
 	$result -> execute();
 	$lista_museos = $result -> fetchAll();
   ?>

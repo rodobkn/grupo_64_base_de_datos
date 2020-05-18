@@ -189,6 +189,31 @@
     </div>
   </section>
 
+  <!-- DE AQUI ABAJO ES PARA LA ENTREGA 3! -->
+
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h1>ENTREGA 3 (NAVEGACION)</h1>
+          <p class="lead">En esta sección, se encontrarán todos los puntos de la parte "Navegación" de la Entrega 3.</p>
+          
+          <h4><span class="font-weight-bold">1)</span> Consulta por Artista.</h4>
+
+          <form align="center" action="consultas/consulta_por_artista_e3.php" method="post">
+
+            <input type="submit" class="btn btn-outline-dark" value="Ir a tabla de artistas">
+            
+          </form>
+
+          <br>
+          <br>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="container">
       <div class="row">

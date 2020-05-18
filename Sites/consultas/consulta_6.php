@@ -12,7 +12,7 @@
     GROUP BY Lugares.id_lugar) AS Periodos
     WHERE Periodos.nbperiodos = (SELECT COUNT (DISTINCT periodo) FROM Obras);
     ";
-  $result = $db -> prepare($query);
+  $result = $db_par -> prepare($query);
   $result -> execute();
   $lugares = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
   ?>

@@ -18,7 +18,7 @@
    AND Lugares_Obras.id_obra = Frescos.id_obra 
   AND Frescos.id_obra = Obras.id_obra
    GROUP BY nombre_lugar,nombre_obra;";
-  $result = $db -> prepare($query);
+  $result = $db_par -> prepare($query);
   $result -> execute();
   $iglesia_fresco = $result -> fetchAll(); #Obtiene todos los resultados de la consulta en forma de un arreglo
 
