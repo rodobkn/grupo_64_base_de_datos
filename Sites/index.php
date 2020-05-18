@@ -214,7 +214,7 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="bg-light">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
