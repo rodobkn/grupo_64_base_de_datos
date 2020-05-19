@@ -13,7 +13,17 @@
  	$query = "SELECT * FROM Artistas WHERE nombre_artista='$nombre_artista';";
 	$result = $db_par -> prepare($query);
 	$result -> execute();
-	$caracteristicas_artista = $result -> fetchAll();
+    $caracteristicas_artista = $result -> fetchAll();
+    
+
+
+    $query_2 = "SELECT nombre_obra FROM Artistas, Artistas_Obras, Obras WHERE Artistas.id_artista = Artistas_Obras.id_artista 
+    AND Artistas_Obras.id_obra=Obras.id_obra AND Artistas.nombre_artista ='$nombre_artista';";
+    $result_2 = $db_par -> prepare($query_2);
+    $result_2 -> execute();
+    $obras_artista = $result_2 -> fetchAll();
+
+
   ?>
 
 
@@ -59,6 +69,40 @@
 
 
 
+<div class="container">
+
+  <div class="card">
+      <div class="card-header">
+          A continuación se mostrarán todas las <b>obras</b> de <b> <?php echo "$nombre_artista" ?> </b>:
+      </div>
+
+      <div class="card-body">
+
+
+      <table class="table">
+          <thead class="thead-dark">
+          <tr>
+              <th scope="col">Nombre de la Obra</th>
+
+          </tr>
+          </thead>
+          <tbody>
+              <!-- <th scope="row">1</th> -->
+
+              <?php
+              foreach ($obras_artista as $obra) {
+                echo "<tr> <td>$obra[0]</td> </tr>";
+                }
+              ?>
+
+
+          </tbody>
+      </table>
+
+
+      </div>
+  </div>
+</div>
 
 
 
