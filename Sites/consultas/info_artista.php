@@ -4,7 +4,7 @@
 
 <?php
 
-    $nombre_artista = $_GET['nombre']
+    $nombre_artista = $_GET['nombre'];
 
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
