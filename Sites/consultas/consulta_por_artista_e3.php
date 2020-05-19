@@ -38,7 +38,9 @@
 				
 				<?php
 				foreach ($artistas as $artista) {
-					echo "<tr> <td>$artista[0]</td> </tr>";
+                    $variable = $artista[0];
+
+					echo "<tr> <td> <a href='info_artista.php?nombre=$variable'> $variable </a> </td> </tr>";
 				}
 				?>
 
