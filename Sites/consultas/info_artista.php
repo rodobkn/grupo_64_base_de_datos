@@ -10,7 +10,7 @@
   require("../config/conexion.php");
 
 
- 	$query = "SELECT * FROM Artistas WHERE nombre_artista=$nombre_artista;";
+ 	$query = "SELECT * FROM Artistas WHERE nombre_artista='$nombre_artista';";
 	$result = $db_par -> prepare($query);
 	$result -> execute();
 	$caracteristicas_artista = $result -> fetchAll();
