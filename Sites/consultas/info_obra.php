@@ -24,6 +24,12 @@
     $result_2 -> execute();
     $artistas_creadores_de_la_obra = $result_2 -> fetchAll();
 
+    $query_3 = "SELECT Lugares.id_lugar, nombre_lugar, ciudad, pais FROM Obras, Lugares_Obras, Lugares, Lugares_ciudades, Ciudades, Ciudades_contacto_paises WHERE 
+    Obras.id_obra = Lugares_Obras.id_obra AND Lugares_Obras.id_lugar=Lugares.id_lugar AND Lugares.id_lugar=Lugares_Ciudades.id_lugar AND 
+    Lugares_Ciudades.id_ciudad = Ciudades.id_ciudad AND Ciudades.id_ciudad=Ciudades_contacto_paises.id_ciudad AND Obras.id_obra=$id_obra;";
+	$result_3 = $db_par -> prepare($query_3);
+	$result_3 -> execute();
+    $caracteristicas_lugar = $result_3 -> fetchAll();
 
   ?>
 
@@ -98,6 +104,52 @@
                 $variable_nombre = $artista[0];
 
                 echo "<tr> <td> <a href='info_artista.php?nombre=$variable_nombre'> $variable_nombre </a> </td> </tr>";
+
+                }
+              ?>
+
+
+          </tbody>
+      </table>
+
+
+      </div>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="container">
+
+  <div class="card">
+      <div class="card-header">
+          A continuación se mostrará el <b>lugar</b> en donde se encuentra la obra <b> <?php echo "$nombre_obra" ?> </b>:
+      </div>
+
+      <div class="card-body">
+
+
+      <table class="table">
+          <thead class="thead-dark">
+          <tr>
+              <th scope="col">Nombre del Lugar</th>
+              <th scope="col">Ciudad</th>
+              <th scope="col">País</th>
+
+          </tr>
+          </thead>
+          <tbody>
+              <!-- <th scope="row">1</th> -->
+
+              <?php
+              foreach ($caracteristicas_lugar as $caracteristica_lugar) {
+                
+                $variable_nombre_lugar = $caracteristica_lugar[1];
+                $variable_ciudad = $caracteristica_lugar[2];
+                $variable_pais = $caracteristica_lugar[3];
+
+                echo "<tr> <td> $variable_nombre_lugar </td> <td>$variable_ciudad</td> <td>$variable_pais</td> </tr>";
 
                 }
               ?>
