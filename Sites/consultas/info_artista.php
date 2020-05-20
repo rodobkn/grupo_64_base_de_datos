@@ -17,7 +17,7 @@
     
 
 
-    $query_2 = "SELECT id_obra, nombre_obra FROM Artistas, Artistas_Obras, Obras WHERE Artistas.id_artista = Artistas_Obras.id_artista 
+    $query_2 = "SELECT Obras.id_obra, Obras.nombre_obra FROM Artistas, Artistas_Obras, Obras WHERE Artistas.id_artista = Artistas_Obras.id_artista 
     AND Artistas_Obras.id_obra=Obras.id_obra AND Artistas.nombre_artista ='$nombre_artista';";
     $result_2 = $db_par -> prepare($query_2);
     $result_2 -> execute();
