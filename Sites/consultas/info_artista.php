@@ -116,7 +116,7 @@
 
 
 
-<?php include('../templates/footer.html'); ?>
+<?php include('../templates/footer_tabla_artistas.html'); ?>
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
