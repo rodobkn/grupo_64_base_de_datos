@@ -4,24 +4,25 @@
 
 <?php
 
-    $nombre_artista = $_GET['nombre'];
+    $nombre_obra = $_GET['nombre_obra'];
+    $id_obra = $_GET['id'];
 
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
 
- 	$query = "SELECT * FROM Artistas WHERE nombre_artista='$nombre_artista';";
+ 	$query = "select nombre_obra, periodo, fecha_1, fecha_2 FROM Obras Where id_obra=$id_obra;";
 	$result = $db_par -> prepare($query);
 	$result -> execute();
-    $caracteristicas_artista = $result -> fetchAll();
+    $caracteristicas_obra = $result -> fetchAll();
     
 
 
-    $query_2 = "SELECT id_obra, nombre_obra FROM Artistas, Artistas_Obras, Obras WHERE Artistas.id_artista = Artistas_Obras.id_artista 
-    AND Artistas_Obras.id_obra=Obras.id_obra AND Artistas.nombre_artista ='$nombre_artista';";
+    $query_2 = "SELECT nombre_artista FROM Artistas, Artistas_Obras, Obras 
+    WHERE Artistas.id_artista=Artistas_Obras.id_artista AND Artistas_Obras.id_obra=Obras.id_obra AND Artistas_Obras.id_obra=$id_obra;";
     $result_2 = $db_par -> prepare($query_2);
     $result_2 -> execute();
-    $obras_artista = $result_2 -> fetchAll();
+    $artistas_creadores_de_la_obra = $result_2 -> fetchAll();
 
 
   ?>
@@ -35,7 +36,7 @@
 
   <div class="card">
       <div class="card-header">
-          A continuación se mostrará informacion del artista <b> <?php echo "$nombre_artista" ?> </b>:
+          A continuación se mostrará informacion de la obra <b> <?php echo "$nombre_obra" ?> </b>:
       </div>
 
       <div class="card-body">
@@ -44,17 +45,18 @@
       <table class="table">
           <thead class="thead-dark">
           <tr>
-              <th scope="col">Descripción</th>
-              <th scope="col">Fecha nacimiento</th>
-              <th scope="col">Fecha fallecimiento</th>
+              <th scope="col">Nombre de la obra</th>
+              <th scope="col">Periodo</th>
+              <th scope="col">Fecha de inicio</th>
+              <th scope="col">Fecha de culminación</th>
           </tr>
           </thead>
           <tbody>
               <!-- <th scope="row">1</th> -->
 
               <?php
-              foreach ($caracteristicas_artista as $caracteristica) {
-                echo "<tr> <td>$caracteristica[2]</td> <td>$caracteristica[3]</td> <td>$caracteristica[4]</td></tr>";
+              foreach ($caracteristicas_obra as $caracteristica) {
+                echo "<tr> <td>$caracteristica[0]</td> <td>$caracteristica[1]</td> <td>$caracteristica[2]</td> <td>$caracteristica[3]</td></tr>";
                 }
               ?>
 
@@ -74,7 +76,7 @@
 
   <div class="card">
       <div class="card-header">
-          A continuación se mostrarán todas las <b>obras</b> de <b> <?php echo "$nombre_artista" ?> </b>:
+          A continuación se mostrarán los/las/el/la artista/s creador/creadores de la obra <b> <?php echo "$nombre_obra" ?> </b>:
       </div>
 
       <div class="card-body">
@@ -83,7 +85,7 @@
       <table class="table">
           <thead class="thead-dark">
           <tr>
-              <th scope="col">Nombre de la Obra</th>
+              <th scope="col">Nombre del Artista</th>
 
           </tr>
           </thead>
@@ -91,12 +93,11 @@
               <!-- <th scope="row">1</th> -->
 
               <?php
-              foreach ($obras_artista as $obra) {
+              foreach ($artistas_creadores_de_la_obra as $artista) {
                 
-                $variable_id = $obra[0];
-                $variable_nombre = $obra[1];
+                $variable_nombre = $artista[0];
 
-                echo "<tr> <td> <a href='info_obra.php?nombre_obra=$variable_nombre&id=$variable_id'> $variable_nombre </a> </td> </tr>";
+                echo "<tr> <td> <a href='info_artista.php?nombre=$variable_nombre'> $variable_nombre </a> </td> </tr>";
 
                 }
               ?>
@@ -109,10 +110,6 @@
       </div>
   </div>
 </div>
-
-
-
-
 
 
 
@@ -127,3 +124,4 @@
 
 <!-- Custom JavaScript for this theme -->
 <script src="js/scrolling-nav.js"></script>
+

@@ -198,7 +198,7 @@
           <h1>ENTREGA 3 (NAVEGACION)</h1>
           <p class="lead">En esta sección, se encontrarán todos los puntos de la parte "Navegación" de la Entrega 3.</p>
           
-          <h4><span class="font-weight-bold">1)</span> Consulta por Artista.</h4>
+          <h4><span class="font-weight-bold">1)</span> Consulta por Artistas, página de la obra y página de un lugar.</h4>
 
           <form align="center" action="consultas/consulta_por_artista_e3.php" method="post">
 
