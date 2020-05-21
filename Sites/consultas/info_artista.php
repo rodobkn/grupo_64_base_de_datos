@@ -23,7 +23,8 @@
     $result_2 -> execute();
     $obras_artista = $result_2 -> fetchAll();
 
-    $numero_filas = mysqli_num_rows($result_2);
+    $numero_filas = $obras_artista->num_rows;
+
 
 
   ?>
