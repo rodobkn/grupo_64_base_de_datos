@@ -23,7 +23,7 @@
     $result_2 -> execute();
     $obras_artista = $result_2 -> fetchAll();
 
-    $numero_filas = $obras_artista->num_rows;
+    $numero_filas = $result_2->num_rows;
 
 
 
