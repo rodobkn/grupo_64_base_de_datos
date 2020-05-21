@@ -23,7 +23,7 @@
     $result_2 -> execute();
     $obras_artista = $result_2 -> fetchAll();
 
-    $numero_filas = $result_2->num_rows;
+    $numero_tuplas = 0;
 
 
 
@@ -78,8 +78,7 @@
   <div class="card">
       <div class="card-header">
           A continuación se mostrarán todas las <b>obras</b> de <b> <?php echo "$nombre_artista" ?> </b>: 
-          <br>
-          Tiene <b><?php echo "$numero_filas" ?></b> de obras.
+
       </div>
 
       <div class="card-body">
@@ -97,7 +96,8 @@
 
               <?php
               foreach ($obras_artista as $obra) {
-                
+
+                $numero_tuplas = $numero_tuplas + 1;
                 $variable_id = $obra[0];
                 $variable_nombre = $obra[1];
 
@@ -114,6 +114,8 @@
       </div>
   </div>
 </div>
+
+<p>Tiene <b><?php echo "$numero_tuplas" ?></b> de obras.</p>
 
 
 
