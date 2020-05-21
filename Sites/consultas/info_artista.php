@@ -23,6 +23,8 @@
     $result_2 -> execute();
     $obras_artista = $result_2 -> fetchAll();
 
+    $numero_filas = mysqli_num_rows($result_2);
+
 
   ?>
 
@@ -74,7 +76,9 @@
 
   <div class="card">
       <div class="card-header">
-          A continuación se mostrarán todas las <b>obras</b> de <b> <?php echo "$nombre_artista" ?> </b>:
+          A continuación se mostrarán todas las <b>obras</b> de <b> <?php echo "$nombre_artista" ?> </b>: 
+          <br>
+          Tiene <b><?php echo "$numero_filas" ?></b> de obras.
       </div>
 
       <div class="card-body">
