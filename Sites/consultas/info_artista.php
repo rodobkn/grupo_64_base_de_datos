@@ -23,9 +23,6 @@
     $result_2 -> execute();
     $obras_artista = $result_2 -> fetchAll();
 
-    $numero_tuplas = 0;
-
-
 
   ?>
 
@@ -115,7 +112,6 @@
   </div>
 </div>
 
-<p>Tiene <b><?php echo "$numero_tuplas" ?></b> de obras.</p>
 
 
 

@@ -145,11 +145,13 @@
               <?php
               foreach ($caracteristicas_lugar as $caracteristica_lugar) {
                 
+                $variable_id = $caracteristica_lugar[0];
                 $variable_nombre_lugar = $caracteristica_lugar[1];
                 $variable_ciudad = $caracteristica_lugar[2];
                 $variable_pais = $caracteristica_lugar[3];
 
-                echo "<tr> <td> $variable_nombre_lugar </td> <td>$variable_ciudad</td> <td>$variable_pais</td> </tr>";
+                echo "<tr> <td> <a href='info_lugar.php?nombre_lugar=$variable_nombre_lugar&id_lugar=$variable_id'> $variable_nombre_lugar </a> </td> <td>$variable_ciudad</td> <td>$variable_pais</td> </tr>";
+
 
                 }
               ?>
