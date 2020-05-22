@@ -1,10 +1,10 @@
-<?php include('../../templates/header_2.html');   ?>
+<?php session_start();?>
+<?php include('../../templates/header_3.html');   ?>
 
 <body>
 
 <?php
 
-session_start();
 
     $id_usuario = $_POST['id_usuario'];
     $fecha_1 = $_POST['fecha_1'];

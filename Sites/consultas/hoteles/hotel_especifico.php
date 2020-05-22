@@ -1,10 +1,9 @@
-<?php include('../../templates/header_2.html');   ?>
+<?php session_start();?>
+<?php include('../../templates/header_3.html');   ?>
 
 <body>
 
 <?php
-
-session_start();
 
     $nombre_hotel = $_GET['nombre_hotel'];
     $id_hotel = $_GET['id'];
