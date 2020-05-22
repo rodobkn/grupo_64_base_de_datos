@@ -209,6 +209,15 @@
           <br>
           <br>
 
+          <h4>2) Reserva de hoteles.</h4>
+
+          <form align="center" action="consultas/hoteles/index_hoteles.php" method="post">
+
+            <input type="submit" class="btn btn-outline-dark" value="Ir a nuestros hoteles">
+            
+          </form>
+
+
         </div>
       </div>
     </div>
