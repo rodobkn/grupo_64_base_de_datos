@@ -68,7 +68,7 @@
   </div>
 </div>
 
-<?php include('../../templates/footer.html'); ?>
+<?php include('../../templates/footer_2.html'); ?>
 
 
 <!-- Bootstrap core JavaScript -->
