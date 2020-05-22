@@ -6,7 +6,7 @@
 
 
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-  require("../config/conexion.php");
+  require("../../config/conexion.php");
 
 
  	$query = "SELECT hid, hnombre, hprecio, cnombre FROM hoteles JOIN ciudades ON hoteles.cid=ciudades.cid;";
