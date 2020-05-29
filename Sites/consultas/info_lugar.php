@@ -49,7 +49,7 @@
     $obras_del_lugar = $result_5 -> fetchAll();
 
     $query_6 = "SELECT DISTINCT nombre_artista FROM Lugares_Obras, Obras, Artistas_Obras, Artistas WHERE Lugares_Obras.id_obra = Obras.id_obra 
-    AND Obras.id_obra=Artistas_Obras.id_obra AND Artistas_Obras.id_artista=Artistas.id_artista AND id_lugar=$id_lugar;"
+    AND Obras.id_obra=Artistas_Obras.id_obra AND Artistas_Obras.id_artista=Artistas.id_artista AND id_lugar=$id_lugar;";
 	$result_6 = $db_par -> prepare($query_6);
 	$result_6 -> execute();
     $artistas_del_lugar = $result_6 -> fetchAll();
