@@ -207,7 +207,7 @@
 
               <?php
               foreach ($artistas_del_lugar as $artista) {
-                $variable_nombre_artista = $artista[0]
+                $variable_nombre_artista = $artista[0];
 
                 echo "<tr> <td> <a href='info_artista.php?nombre=$variable_nombre_artista'> $variable_nombre_artista </a> </td> </tr>";
 
