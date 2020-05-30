@@ -114,7 +114,7 @@
 
   <div class="card">
       <div class="card-header">
-        A continuación se mostrarán los <b>asientos ocupados</b> del viaje para la fecha  <b> <?php echo "$fecha_viaje" ?></b>:
+        A continuación se mostrarán los <b>números de los asientos ocupados</b> del viaje para la fecha  <b> <?php echo "$fecha_viaje" ?></b>:
       </div>
 
       <div class="card-body">
@@ -153,6 +153,7 @@
 
   <div class="card">
       <div class="card-header">
+        <h3>Compra del Ticket</h3> <br>
         A continuación se permite comprar un <b>ticket</b> para este viaje con la fecha <b><?php echo "$fecha_viaje" ?></b>.
         Recuerde que debe introducir un número de asiento que <b>NO</b> este usado, de lo contrario no se podrá comprar el ticket.
       </div>
