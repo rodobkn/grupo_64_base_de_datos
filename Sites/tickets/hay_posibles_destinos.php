@@ -38,9 +38,9 @@
                 $capacidad = $destino[6];
                 $precio = $destino[7];
 
-                echo "<tr> <td> viaje $id_destino </td> <td>  $nombre_ciudad_origen </td> <td>  $nombre_ciudad_destino </td> 
-                <td>  $horario </td> <td>  $duracion horas </td> <td>  $medio </td> <td>  $capacidad personas </td> <td>  $precio </td> </tr>";
-
+                echo "<tr> <td> <a href='destino_especifico.php?id_destino=$id_destino&fecha_viaje=$fecha_viaje&n_ciudad_origen=$nombre_ciudad_origen&n_ciudad_destino=$nombre_ciudad_destino'> viaje $id_destino </a> </td> 
+                <td>  $nombre_ciudad_origen </td> <td>  $nombre_ciudad_destino </td> <td>  $horario </td> 
+                <td>  $duracion horas </td> <td>  $medio </td> <td>  $capacidad personas </td> <td>  $precio </td> </tr>";
 
                 }
               ?>
