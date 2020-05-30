@@ -60,9 +60,9 @@
             <?php
                     foreach ($lista_de_ciudades as $ciudad) {
                         $ciudad_id = $ciudad[0];
-                        $nombre_ciudad = $ciudad[2]
+                        $nombre_ciudad = $ciudad[2];
 
-                        echo "<option value="$ciudad_id"> $nombre_ciudad </option>";
+                        echo "<option value=" . $ciudad_id . "> $nombre_ciudad </option>";
                     }
             ?>
 
