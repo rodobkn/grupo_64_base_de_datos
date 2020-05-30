@@ -43,7 +43,7 @@
 
     $fecha_de_compra = date('Y/m/d');
 
-    $array_a_mandar_2 = array($id_destino, $fecha_de_compra, $fecha_viaje);
+    $array_a_mandar_2 = array($id_destino, $fecha_de_compra, $fecha_viaje, $asientos_ocupados);
     $_SESSION['array_2'] = $array_a_mandar_2;
 
 

@@ -17,6 +17,7 @@
   $id_destino = $array_recibido[0];
   $fecha_de_compra = $array_recibido[1];
   $fecha_de_viaje = $array_recibido[2];
+  $asientos_ocupados = $array_recibido[3];  #este es una lista que contiene a los numeros de asientos ocupados
 
   $query = "SELECT MAX(tid) FROM tickets;";
   $result = $db_impar -> prepare($query);
@@ -36,14 +37,17 @@
 <br>
 <br>
 
-<b> <?php echo "$id_usuario " ?></b>
-<b> <?php echo "$numero_de_asiento " ?></b>
-<b> <?php echo "$id_destino " ?></b>
-<b> <?php echo "$fecha_de_compra " ?></b>
-<b> <?php echo "$fecha_de_viaje " ?></b>
-<b> <?php echo "$id_del_ticket_nuevo " ?></b>
+<?php
+
+    if (in_array($numero_de_asiento, $asientos_ocupados)) {
+        include('asiento_repetido.php');
+    }  
+    else {
+        include('asiento_disponible.php');
+    }
 
 
+?>
 
 
 
