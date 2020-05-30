@@ -52,6 +52,7 @@
 
   <div class="card">
       <div class="card-header">
+          Usted está buscando viaje para la siguiente fecha: <b> <?php echo "$fecha_viaje" ?></b> <br>
           A continuación se mostrarán todos los <b>viajes</b> que tenemos disponibles. Si quiere comprar un viaje, o simplemente más
           información, haga click sobre el viaje:
       </div>
