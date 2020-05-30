@@ -217,6 +217,17 @@
             
           </form>
 
+          <br>
+          <br>
+
+          <h4>3) Compra de tickets.</h4>
+
+          <form align="center" action="tickets/principal_page.php" method="post">
+
+            <input type="submit" class="btn btn-outline-dark" value="Comprar ticket">
+            
+          </form>
+
 
         </div>
       </div>
