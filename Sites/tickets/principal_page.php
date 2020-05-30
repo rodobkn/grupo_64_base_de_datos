@@ -12,7 +12,8 @@
 	$result -> execute();
 	$lista_de_ciudades = $result -> fetchAll();
   ?>
-
+<br>
+<br>
 
 <div class="container">
 
@@ -35,40 +36,44 @@
             <input type="text" name="fecha_viaje" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
-        <br>
 
-        <label> Ciudad de Inicio </label> <br> <br>
-        <select name="ciudad_origen" class="selectpicker">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Ciudad de Inicio</label>
+            </div>
+            <select name="ciudad_origen" class="custom-select" id="inputGroupSelect01">
 
-            <?php
-                    foreach ($lista_de_ciudades as $ciudad) {
-                        $ciudad_id = $ciudad[0];
-                        $nombre_ciudad = $ciudad[2];
+                <?php
+                        foreach ($lista_de_ciudades as $ciudad) {
+                            $ciudad_id = $ciudad[0];
+                            $nombre_ciudad = $ciudad[2];
 
-                        echo "<option value=" . $ciudad_id . "> $nombre_ciudad </option>";
-                    }
-            ?>
-
-
-        </select>
-
-        <br>
-
-        <label> Ciudad de Destino </label> <br> <br>
-        <select name="ciudad_destino" class="selectpicker">
-
-            <?php
-                    foreach ($lista_de_ciudades as $ciudad) {
-                        $ciudad_id = $ciudad[0];
-                        $nombre_ciudad = $ciudad[2];
-
-                        echo "<option value=" . $ciudad_id . "> $nombre_ciudad </option>";
-                    }
-            ?>
+                            echo "<option value=" . $ciudad_id . "> $nombre_ciudad </option>";
+                        }
+                ?>
 
 
-        </select>
+            </select>
+        </div>
 
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Ciudad de Destino</label>
+            </div>
+            <select name="ciudad_destino" class="custom-select" id="inputGroupSelect01">
+
+                <?php
+                        foreach ($lista_de_ciudades as $ciudad) {
+                            $ciudad_id = $ciudad[0];
+                            $nombre_ciudad = $ciudad[2];
+
+                            echo "<option value=" . $ciudad_id . "> $nombre_ciudad </option>";
+                        }
+                ?>
+
+
+            </select>
+        </div>
 
         <br>
 
