@@ -153,8 +153,8 @@
 
   <div class="card">
       <div class="card-header">
-        <h3>A continuación se permite comprar un <b>ticket</b> para este viaje con la fecha <b><?php echo "$fecha_viaje" ?></b>.</h3>
-        <p>Recuerde que debe introducir un número de asiento que <b>NO</b> este usado, de lo contrario no se podrá comprar el ticket.</p>
+        A continuación se permite comprar un <b>ticket</b> para este viaje con la fecha <b><?php echo "$fecha_viaje" ?></b>.
+        Recuerde que debe introducir un número de asiento que <b>NO</b> este usado, de lo contrario no se podrá comprar el ticket.
       </div>
 
       <div class="card-body">           

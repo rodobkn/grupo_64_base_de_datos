@@ -13,14 +13,26 @@
 
 
   $array_recibido = $_SESSION['array_2'];
-  
+
   $id_destino = $array_recibido[0];
   $fecha_de_compra = $array_recibido[1];
   $fecha_de_viaje = $array_recibido[2];
 
+  $query = "SELECT MAX(tid) FROM tickets;";
+  $result = $db_impar -> prepare($query);
+  $result -> execute();
+  $maximo_tid = $result -> fetchAll();
+
+  foreach ($maximo_tid as $id_maximo) {
+
+    $id_del_ticket_nuevo = $id_maximo[0] + 1;
+
+    }
 
 
   ?>
+
+
 <br>
 <br>
 
@@ -29,6 +41,7 @@
 <b> <?php echo "$id_destino " ?></b>
 <b> <?php echo "$fecha_de_compra " ?></b>
 <b> <?php echo "$fecha_de_viaje " ?></b>
+<b> <?php echo "$id_del_ticket_nuevo " ?></b>
 
 
 
