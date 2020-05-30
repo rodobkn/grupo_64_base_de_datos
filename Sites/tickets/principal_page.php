@@ -19,9 +19,9 @@
 
   <div class="card">
       <div class="card-header">
-        <h3>A continuación ingresa la fecha en que quieres realizar tu viaje(en formato YYYY-MM-DD). <br>
+        <h4>A continuación ingresa la fecha en que quieres realizar tu viaje(en formato yyyy-mm-dd).
             Asimismo, ingresa la ciudad de inicio de tu viaje y la ciudad destino.
-        </h3>
+        </h4>
       </div>
 
       <div class="card-body">           
