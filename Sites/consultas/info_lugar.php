@@ -41,9 +41,9 @@
 	$result_4 -> execute();
     $ciudad_y_pais_del_lugar = $result_4 -> fetchAll();
 
-    $query_5 = "SELECT Obras.id_obra, nombre_obra, fecha_1, fecha_2, nombre_artista FROM Lugares_Obras, Obras, Artistas_Obras, Artistas 
-    WHERE Lugares_Obras.id_obra = Obras.id_obra AND Obras.id_obra=Artistas_Obras.id_obra AND Artistas_Obras.id_artista=Artistas.id_artista
-    AND id_lugar=$id_lugar;";
+    $query_5 = "SELECT Obras.id_obra, nombre_obra, fecha_1, fecha_2 FROM Lugares_Obras, Obras, Artistas_Obras, Artistas 
+    WHERE Lugares_Obras.id_obra = Obras.id_obra AND Obras.id_obra=Artistas_Obras.id_obra 
+    AND Artistas_Obras.id_artista=Artistas.id_artista AND id_lugar=$id_lugar GROUP BY Obras.id_obra;";
 	$result_5 = $db_par -> prepare($query_5);
 	$result_5 -> execute();
     $obras_del_lugar = $result_5 -> fetchAll();
