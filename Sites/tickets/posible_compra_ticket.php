@@ -17,7 +17,8 @@
   $id_destino = $array_recibido[0];
   $fecha_de_compra = $array_recibido[1];
   $fecha_de_viaje = $array_recibido[2];
-  $asientos_ocupados = $array_recibido[3];  #este es una lista que contiene a los numeros de asientos ocupados
+  $capacidad_disponible = $array_recibido[3];
+  $asientos_ocupados = $array_recibido[4];  #este es una lista que contiene a los numeros de asientos ocupados
 
   $query = "SELECT MAX(tid) FROM tickets;";
   $result = $db_impar -> prepare($query);
@@ -39,16 +40,16 @@
 
 <?php
 
-    if (in_array($numero_de_asiento, $asientos_ocupados)) {
+    if ($capacidad_disponible == 0) {
+        include('no_hay_capacidad.php');
+    } elseif (in_array($numero_de_asiento, $asientos_ocupados)){
         include('asiento_repetido.php');
-    }  
-    else {
+    } else {
         include('asiento_disponible.php');
     }
 
 
 ?>
-
 
 
 
