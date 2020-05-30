@@ -3,6 +3,8 @@
 <body>
 
 <?php
+
+
   require("../config/conexion.php"); #Llama a conexión, crea el objeto PDO y obtiene la variable $db
 
 
@@ -39,6 +41,7 @@
 
     }
 
+    $numero_de_destinos = count($lista_de_destinos);
 
 
 
@@ -52,6 +55,7 @@
 
   <div class="card">
       <div class="card-header">
+        <b> <?php echo "$numero_de_destinos destinos" ?></b> <br>
           Usted está buscando viaje para la siguiente fecha: <b> <?php echo "$fecha_viaje" ?></b> <br>
           A continuación se mostrarán todos los <b>viajes</b> que tenemos disponibles. Si quiere comprar un viaje, o simplemente más
           información, haga click sobre el viaje:
@@ -89,7 +93,7 @@
                 $precio = $destino[7];
 
                 echo "<tr> <td> viaje $id_destino </td> <td>  $nombre_ciudad_origen </td> <td>  $nombre_ciudad_destino </td> 
-                <td>  $horario </td> <td>  $duracion </td> <td>  $medio </td> <td>  $capacidad </td> <td>  $precio </td> </tr>";
+                <td>  $horario </td> <td>  $duracion horas </td> <td>  $medio </td> <td>  $capacidad personas </td> <td>  $precio </td> </tr>";
 
 
                 }
