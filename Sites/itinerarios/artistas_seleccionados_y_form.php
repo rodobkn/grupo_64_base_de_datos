@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php include('../templates/header_2.html');   ?>
 
 <body>
@@ -6,11 +7,11 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-    
-    #$query = "SELECT nombre_artista FROM Artistas;";
-	#$result = $db_par -> prepare($query);
-	#$result -> execute();
-	#$artistas = $result -> fetchAll();
+      
+    $query = "SELECT cid, pid, cnombre FROM ciudades;";
+	$result = $db_impar -> prepare($query);
+	$result -> execute();
+	$lista_de_ciudades = $result -> fetchAll();
 
 
   ?>
@@ -29,11 +30,6 @@ else{
 }
 
 ?>
-
-
-
-
-
 
 
 

@@ -1,42 +1,42 @@
+<?php session_start();?>
 <?php include('../templates/header_2.html');   ?>
 
 <body>
 
 <?php
+
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-    
-    $query = "SELECT nombre_artista FROM Artistas;";
-	$result = $db_par -> prepare($query);
-	$result -> execute();
-	$artistas = $result -> fetchAll();
+  $fecha_viaje = $_POST["fecha_viaje"];
+  $ciudad_origen_id = $_POST["ciudad_origen"];
+
+  $array_nombre_artistas = $_SESSION['array_3'];
 
 
   ?>
+
 <br>
 <br>
 
+<b> <?php echo "$fecha_viaje" ?></b> <br>
+<b> <?php echo "$ciudad_origen_id" ?></b> <br>
 
-<form align="center" action="artistas_seleccionados_y_form.php" method="post">
+<?php
 
-    <p>Selecciona la cantidad de artistas que quieras:</p>
+foreach ($array_nombre_artistas as $nombre_artista) {
 
+    echo "$nombre_artista <br>";
 
-
-    <?php
-    foreach ($artistas as $artista) {
-        $variable = $artista[0];
-
-        echo "<input type='checkbox' value='$variable' name='artistas[]'> $variable <br/>";
     }
-    ?>
 
-    <br>
 
-    <input type="submit" class="btn btn-outline-dark" value="Continuar">
+?>
 
-</form>
+
+
+
+
 
 
 
