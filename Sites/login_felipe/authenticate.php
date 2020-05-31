@@ -43,5 +43,5 @@ session_start();
     }
     ?>
 
-<b> <?php echo "$username " ?></b>
+<b> <?php echo "$usuario_linea[0] " ?></b>
 <b> <?php echo "$password " ?></b>
