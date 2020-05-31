@@ -27,11 +27,15 @@
 <br>
 <br>
 
-<b> <?php echo "$user_id " ?></b>
-<b> <?php echo "$fecha_1 " ?></b>
-<b> <?php echo "$fecha_2 " ?></b>
-<b> <?php echo "$id_hotel " ?></b>
-<b> <?php echo "$id_reserva " ?></b>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Reserva exitosa!
+        </div>
+    </div>
+</div>
+
 
 
 <?php include('../../templates/footer_2.html'); ?>

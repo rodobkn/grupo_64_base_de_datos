@@ -23,6 +23,8 @@
 
               <?php
               foreach ($caracteristicas_museo as $caracteristica) {
+
+                $id_museo = $caracteristica[0];
                 
 
                 echo "<tr> <td> $caracteristica[1] </td> <td> $caracteristica[2] </td> <td> $caracteristica[3] </td> </tr>";
@@ -38,3 +40,11 @@
       </div>
   </div>
 </div>
+
+<form align="center" action="comprar_entrada_museo.php" method="post">
+
+    <input type="hidden" name="id_lugar" value="<?php $id_museo ?>" />
+
+    <input type="submit" class="btn btn-outline-dark" value="Comprar entrada a este Museo">
+
+</form>
