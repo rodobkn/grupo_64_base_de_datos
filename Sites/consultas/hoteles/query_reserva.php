@@ -18,8 +18,7 @@
   require("../../config/conexion.php");
 
 
- 	$query = "INSERT INTO reservas (rid, fechainicio, fechatermino, uid, hid) 
-   VALUES ($id_reserva, '$fecha_1', '$fecha_2', $user_id, $id_hotel);";
+ 	$query = "INSERT INTO reservas VALUES($id_reserva, '$fecha_1', '$fecha_2', $user_id, $id_hotel);";
 	$result = $db_impar -> prepare($query);
 	$result -> execute();
 
