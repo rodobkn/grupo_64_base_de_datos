@@ -28,9 +28,9 @@
     }
 
 
- 	#$query = "INSERT INTO entregas_museo VALUES($id_entrega, $user_id, $id_lugar, '$fecha_de_compra');";
-	#$result = $db_impar -> prepare($query);
-	#$result -> execute();
+ 	$query = "INSERT INTO entregas_museo VALUES($id_entrega, $user_id, $id_lugar, '$fecha_de_compra');";
+	$result = $db_impar -> prepare($query);
+	$result -> execute();
 
   ?>
 
