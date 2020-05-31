@@ -1,0 +1,67 @@
+ALTER USER <grupo64> ENCRYPTED PASSWORD 'francia64';
+ALTER USER grupo64 ENCRYPTED PASSWORD 'francia64';
+\q
+\dt
+\dt
+SELECT * FROM ciudades_paises
+\d ciudades_paises
+SELECT * FROM ciudades_paises;
+SELECT * FROM ciudades_paises;
+\dt
+psql grupo64e2
+\dt
+/dtCREATE TABLE Plazas(id_lugar int PRIMARY KEY);
+\dt
+\q
+\dt
+\COPY plazas FROM 'Plazas.csv' DELIMITER ',' CSV HEADER
+SELECT * FROM plazas;
+create table Artistas (id_artista int PRIMARY KEY, nombre_artista varchar(255), descripcion text, fecha_nacimiento date, fecha_fallecimiento date);
+\dt
+\COPY Artistas from 'documents/bases_de_datos_ALONE/datos/artistas_definitivo.csv' DELIMITER ',' CSV HEADER
+pwd;
+\q
+\COPY artistas from 'entrega2/CSV/artistas_definitivo.csv' DELIMITER ';' CSV HEADER
+\dt
+select * from ciudades;
+select * from plazas;
+\q
+\dt
+create table artistas(id_artista int primary key, nombre_artista varchar(255), descripcion text, fecha_nacimiento date, fecha_fallecimiento date);
+create table obras(id_obra int primary key, nombre_obra varchar(255), fecha_1 int, fecha_2 int, periodo varchar(255));
+create table artistas_obras(id_artista int, id_obra int, primary key (id_artista, id_obra), foreign key (id_artista) references artistas(id_artista), foreign key (id_obra) references obras(id_obra));
+create table frescos(id_obra int primary key, foreign key (id_obra) references obras(id_obra));
+create table esculturas(id_obra int primary key, material varchar(255), foreign key (id_obra) references obras(id_obra));
+create table pinturas(id_obra int primary key, tecnica varchar(255), foreign key (id_obra) references obras(id_obra));
+create lugares_obras(id_obra int primary key, id_lugar int, foreign key (id_obra) references obras(id_obra), foreign key (id_lugar) references lugares(id_lugar));
+create table lugares_obras(id_obra int primary key, id_lugar int, foreign key (id_obra) references obras(id_obra), foreign key (id_lugar) references lugares(id_lugar));
+\COPY artistas from 'entrega2/CSV/artistas_definitivo.csv' DELIMITER ';' CSV HE
+\COPY obras from 'entrega2/CSV/obras_definitivo.csv' DELIMITER ';' CSV HEADER
+\COPY artistas_obras from 'entrega2/CSV/artistas_obras_definitivo.csv' DELIMITER ';' CSV HEADER
+\COPY frescos from 'entrega2/CSV/frescos_definitivo.csv' DELIMITER ';' CSV HEADER
+\COPY esculturas from 'entrega2/CSV/esculturas_definitivo.csv' DELIMITER ';' CSV HEADER
+\COPY pinturas from 'entrega2/CSV/pinturas_definitivo.csv' DELIMITER ';' CSV HEADER
+\COPY lugares_obras from 'entrega2/CSV/lugares_obras_definitivo.csv' DELIMITER ';' CSV HEADER
+\q
+\q
+SELECT DISTINCT nombre_lugar FROM Ciudades_contacto_paises, Lugares_ciudades, Lugares, Museos, Lugares_Obras, Obras WHERE Ciudades_contacto_paises.id_ciudad = Lugares_ciudades.id_ciudad AND Ciudades_contacto_paises.pais = 'Francia' AND Lugares_ciudades.id_lugar = Lugares.id_lugar AND Lugares.id_lugar = Museos.id_lugar AND Museos.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Obras.id_obra AND LOWER(Obras.periodo) = 'renacimiento';
+SELECT DISTINCT nombre_lugar FROM Ciudades_contacto_paises, Lugares_ciudades, Lugares, Museos, Lugares_Obras, Obras WHERE Ciudades_contacto_paises.id_ciudad = Lugares_ciudades.id_ciudad AND Ciudades_contacto_paises.pais = 'Francia' AND Lugares_ciudades.id_lugar = Lugares.id_lugar AND Lugares.id_lugar = Museos.id_lugar AND Lugares.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Obras.id_obra AND LOWER(Obras.periodo) = 'renacimiento';
+SELECT DISTINCT nombre_lugar FROM Ciudades_contacto_paises, Lugares_ciudades, Lugares, Museos, Lugares_Obras, Obras WHERE Ciudades_contacto_paises.id_ciudad = Lugares_ciudades.id_ciudad AND Ciudades_contacto_paises.pais = 'Francia' AND Lugares_ciudades.id_lugar = Lugares.id_lugar AND Lugares.id_lugar = Museos.id_lugar AND Lugares.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Obras.id_obra AND Obras.periodo = 'Renacimiento';
+SELECT nombre_artista, COUNT(id_obra) FROM Artistas, Artistas_Obras WHERE Artistas.id_artista = Artistas_Obras.id_artista GROUP BY Artistas_Obras.id_artista;
+SELECT nombre_artista, COUNT(id_obra) FROM Artistas, Artistas_Obras WHERE Artistas.id_artista = Artistas_Obras.id_artista GROUP BY nombre_artista;
+SELECT * FROM Iglesias;
+SELECT nombre_lugar, nombre_obra FROM Iglesias, Lugares, Lugares_ciudades, Ciudades, Lugares_Obras, Frescos, Obras WHERE Lugares.id_lugar = Iglesias.id_lugar AND hora_apertura > '06:00:00' AND hora_cierre < '20:00:00' AND Iglesias.id_lugar = Lugares_ciudades.id_lugar AND Lugares_ciudades.id_ciudad = Ciudades.id_ciudad AND Ciudades.ciudad = 'Roma' AND Iglesias.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Frescos.id_obra AND Frescos.id_obra = Obras.id_obra GROUP BY nombre_lugar;
+SELECT nombre_lugar, nombre_obra FROM Iglesias, Lugares, Lugares_ciudades, Ciudades, Lugares_Obras, Frescos, Obras WHERE Lugares.id_lugar = Iglesias.id_lugar AND hora_apertura > '06:00:00' AND hora_cierre < '20:00:00' AND Iglesias.id_lugar = Lugares_ciudades.id_lugar AND Lugares_ciudades.id_ciudad = Ciudades.id_ciudad AND Ciudades.ciudad = 'Roma' AND Iglesias.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Frescos.id_obra = Obras.id_obra GROUP BY nombre_lugar,nombre_obra;
+SELECT nombre_lugar, nombre_obra FROM Iglesias, Lugares, Lugares_ciudades, Ciudades, Lugares_Obras, Frescos, Obras WHERE Lugares.id_lugar = Iglesias.id_lugar AND hora_apertura > '06:00:00' AND hora_cierre < '20:00:00' AND Iglesias.id_lugar = Lugares_ciudades.id_lugar AND Lugares_ciudades.id_ciudad = Ciudades.id_ciudad AND Ciudades.ciudad = 'Roma' AND Iglesias.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Frescos.id_obra AND Frescos.id_obra = Obras.id_obra GROUP BY nombre_lugar;
+SELECT nombre_lugar, nombre_obra FROM Iglesias, Lugares, Lugares_ciudades, Ciudades, Lugares_Obras, Frescos, Obras WHERE Lugares.id_lugar = Iglesias.id_lugar AND hora_apertura > '06:00:00' AND hora_cierre < '20:00:00' AND Iglesias.id_lugar = Lugares_ciudades.id_lugar AND Lugares_ciudades.id_ciudad = Ciudades.id_ciudad AND Ciudades.ciudad = 'Roma' AND Iglesias.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Frescos.id_obra = Obras.id_obra GROUP BY nombre_lugar,nombre_obra;
+SELECT id_lugar, COUNT(DISTINCT periodo) FROM Lugares_Obras, Obras GROUP BY id_lugar;
+SELECT id_lugar, COUNT(DISTINCT periodo) FROM Lugares_Obras, Obras WHERE Lugares_Obras.id_obra = Obras.id_obra GROUP BY id_lugar;
+SELECT nombre_lugar, id_lugar, COUNT(DISTINCT periodo) FROM Lugares, Lugares_Obras, Obras WHERE Lugares.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Obras.id_obra GROUP BY nombre_lugar;
+SELECT nombre_lugar, Lugares.id_lugar, COUNT(DISTINCT periodo) FROM Lugares, Lugares_Obras, Obras WHERE Lugares.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Obras.id_obra GROUP BY nombre_lugar;
+SELECT nombre_lugar, Lugares.id_lugar, COUNT(DISTINCT periodo) FROM Lugares, Lugares_Obras, Obras WHERE Lugares.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Obras.id_obra GROUP BY nombre_lugar;
+SELECT nombre_lugar, Lugares.id_lugar, COUNT(DISTINCT periodo) FROM Lugares, Lugares_Obras, Obras WHERE Lugares.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Obras.id_obra GROUP BY nombre_lugar,id_lugar;
+SELECT nombre_lugar, Lugares.id_lugar, COUNT(DISTINCT periodo) FROM Lugares, Lugares_Obras, Obras WHERE Lugares.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Obras.id_obra GROUP BY nombre_lugar,Lugares_id_lugar;
+SELECT nombre_lugar, Lugares.id_lugar, COUNT(DISTINCT periodo) FROM Lugares, Lugares_Obras, Obras WHERE Lugares.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Obras.id_obra GROUP BY nombre_lugar,Lugares.id_lugar;
+SELECT nombre_lugar, Lugares.id_lugar, COUNT(DISTINCT periodo) AS NbPeriodos FROM Lugares, Lugares_Obras, Obras WHERE Lugares.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Obras.id_obra GROUP BY nombre_lugar,Lugares.id_lugar;
+SELECT nombre_lugar, COUNT(DISTINCT periodo) AS NbPeriodos FROM Lugares, Lugares_Obras, Obras WHERE Lugares.id_lugar = Lugares_Obras.id_lugar AND Lugares_Obras.id_obra = Obras.id_obra GROUP BY nombre_lugar;
+SELECT nombre_lugar FROM (S

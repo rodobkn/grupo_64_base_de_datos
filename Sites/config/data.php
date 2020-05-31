@@ -5,7 +5,7 @@
 
   $user2 = 'grupo87';
   $password2 = 'sarahfelipe';
-  $databaseName2 = 'grupo87e2';
+  $databaseName2 = 'grupo87e3';
 
 ?>
 
