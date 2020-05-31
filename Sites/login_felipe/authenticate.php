@@ -41,6 +41,3 @@
         include('no_existe_home.php');
     }
     ?>
-
-<b> <?php echo "$usuario_linea[0] " ?></b>
-<b> <?php echo "$password " ?></b>

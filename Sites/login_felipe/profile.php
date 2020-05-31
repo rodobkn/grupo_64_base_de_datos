@@ -3,7 +3,7 @@
 ?>
 <?php include('header_2.html')?>
 
-<?php require('../includes/conexion.php');?>
+<?php require('conexion.php');?>
 
 <body id="page-top"> 
 
