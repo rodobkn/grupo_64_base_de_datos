@@ -125,6 +125,8 @@
 
 <?php include('../../templates/footer_tabla_hoteles.html'); ?>
 
+<?php include('../../templates/footer_2.html'); ?>
+
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
