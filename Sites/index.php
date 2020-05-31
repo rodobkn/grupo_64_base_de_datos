@@ -5,245 +5,121 @@
 
 <body id="page-top">
 
+
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Colecciones de arte</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Consultas de viajes</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Consultas simples</a>
+            <a class="nav-link js-scroll-trigger" href="#login">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Consultas con ingreso</a>
+            <a class="nav-link js-scroll-trigger" href="#register">Registrarse</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
-          </li>
+
         </ul>
       </div>
     </div>
   </nav>
 
-
-  <header>
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-      <!-- Slide One - Set the background image for this slide in the line below -->
-      <div class="carousel-item active" style="background-image: url('images_bdd/tierra.jpg')">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Bienvenido a la mejor base de datos de colecciones de arte!</h2>
-          <p class="lead">Aquí podrás encontrar información de distintas obras de arte del mundo entero. Además de los lugares en donde se encuentran para que puedas diseñar tu aventura.</p>
-        </div>
-      </div>
-      <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('images_bdd/gian.jpg')">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4">Encontrarás obras del gran Gian Lorenzo Bernini</h2>
-
-        </div>
-      </div>
-      <!-- Slide Three - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('images_bdd/definitivo.png')">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="display-4" >También todas las obras del polímata Leonardo Da Vinci</h2>
-
-        </div>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-  </div>
-  </header>
-
-
-  <section id="about">
+  <!------------ LOGIN  ---------------->        
+  <section id="login">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h1>Consultas simples</h1>
-          <p class="lead">En esta sección, podrás hacer consultas simples, es decir, que no tienes que hacer un ingreso de ningún dato, simplemente consultar. Por lo que podrás encontrar las consultas 1, 2, 4, 6 de la entrega 2 para grupos pares.</p>
-          
-          <h4><span class="font-weight-bold">1)</span> Se muestra todas las obras de arte disponibles, con distinto nombre.</h4>
 
-          <form align="center" action="consultas/consulta_1.php" method="post">
+          <h1>Login</h1>
+          <p class="lead">Logeate y disfruta del servicio.</p>
 
-            <input type="submit" class="btn btn-outline-dark" value="Consultar">
-            
-          </form>
+                                <!-- CAMBIAR AL PHP DE LOGIN-->
+          <form align="center" action="login_felipe/authenticate.php" method="post">
 
-          <br>
-          <br>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Username</span>
+              </div>
+              <input type="text" name="username" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
+            </div>
 
-          <h4><span class="font-weight-bold">2)</span> Se muestra todos los nombres de las plazas que contengan al menos una escultura del gran "Gian Lorenzo Bernini".</h4>
-
-          <form align="center" action="consultas/consulta_2.php" method="post">
-
-            <br>
-
-            <input type="submit" class="btn btn-outline-info" value="Consultar">
-          </form>
-
-          <br>
-          <br>
-
-          <h4><span class="font-weight-bold">4)</span> A continuación se podrá consultar a los artistas, junto con la cantidad de obras que tienen respectivamente.</h4>
-
-          <form align="center" action="consultas/consulta_4.php" method="post">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Contraseña</span>
+              </div>
+              <input type="text" name="password" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
+            </div>
 
             <br>
-            <input type="submit" class="btn btn-outline-dark" value="Consultar">
+            <input type="submit" class="btn btn-outline-info" value="Login">
           </form>
         
-          <br>
-          <br>
-
-          <h4><span class="font-weight-bold">6)</span> A continuación se podrá consultar el lugar que contiene obras de todos los periodos 
-            existentes en la base de datos.</h4>
-          
-            <form align="center" action="consultas/consulta_6.php" method="post">
-              <br>
-              <input type="submit" class="btn btn-outline-info" value="Consultar">
-            </form>
-
-
         </div>
       </div>
     </div>
   </section>
 
-  <section id="services" class="bg-light">
+
+  <!------------ REGITRO----------------->         
+  <section id="register">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>Consultas con ingreso</h2>
-          <p class="lead">En esta sección podrás hacer consultas con distintos datos que quiera ingresar. Por lo que acá están alojadas las consultas 3 y 5 de la entrega 2 de los grupos pares.</p>
-
-          <h4>3) Buscar museos que tengan obras del renacimiento por país.</h4>
-
-          <form align="center" action="consultas/consulta_3.php" method="post">
-            <br>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">País</span>
-              </div>
-              <input type="text" name="pais" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
-            </div>
-
-            <br/>
-            <input type="submit" class="btn btn-outline-dark" value="Buscar">
-          </form>
-          <br>
-          <br>
-
-          <h3>5) Se permite buscar iglesias en el horario de funcionamiento que usted indique. <br>
-            Además, se muestran junto a sus frescos.</h3>
-            
+ 
+          <h1>Registrarse</h1>
+          <p class="lead">Aquí podrás registrarte para acceder a un mejor servicio.</p>
           
-          <form align="center" action="consultas/consulta_5.php" method="post">
-            <br>
+                                <!-- cambiar al php de registro-->
+          <form align="center" action="register_felipe/registrar.php" method="post">
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Ciudad</span>
+                <span class="input-group-text" id="basic-addon1">Nombre</span>
               </div>
-              <input type="text" name="ciudad" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" name="nombre" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
             </div>
             
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Horario apertura</span>
+                <span class="input-group-text" id="basic-addon1">Username</span>
               </div>
-              <input type="text" name="horario_1" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" name="username" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
             </div>
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Horario de salida</span>
+                <span class="input-group-text" id="basic-addon1">Contraseña</span>
               </div>
-              <input type="text" name="horario_2" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" name="password" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
             </div>
 
-            <br>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Correo</span>
+              </div>
+              <input type="text" name="correo" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
+            </div>
 
-            <input type="submit" class="btn btn-outline-info" value="Buscar">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Dirección</span>
+              </div>
+              <input type="text" name="direccion" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
+            </div>
+
+            <input type="submit" class="btn btn-outline-info" value="Registrar">
           </form>
-
 
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DE AQUI ABAJO ES PARA LA ENTREGA 3! -->
 
-  <section id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h1>ENTREGA 3 (NAVEGACION)</h1>
-          <p class="lead">En esta sección, se encontrarán todos los puntos de la parte "Navegación" de la Entrega 3.</p>
-          
-          <h4><span class="font-weight-bold">1)</span> Consulta por Artistas, página de la obra y página de un lugar.</h4>
-
-          <form align="center" action="consultas/consulta_por_artista_e3.php" method="post">
-
-            <input type="submit" class="btn btn-outline-dark" value="Ir a tabla de artistas">
-            
-          </form>
-
-          <br>
-          <br>
-
-          <h4>2) Reserva de hoteles.</h4>
-
-          <form align="center" action="consultas/hoteles/index_hoteles.php" method="post">
-
-            <input type="submit" class="btn btn-outline-dark" value="Ir a nuestros hoteles">
-            
-          </form>
-
-          <br>
-          <br>
-
-          <h4>3) Compra de tickets.</h4>
-
-          <form align="center" action="tickets/principal_page.php" method="post">
-
-            <input type="submit" class="btn btn-outline-dark" value="Comprar ticket">
-            
-          </form>
-
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Contacto</h2>
-          <p class="lead">Nathalie Germani: ngermani@uc.cl <br> Rodolfo Mendoza: rrmendoza@uc.cl</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">

@@ -32,7 +32,7 @@
             <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Fecha del viaje</span>
             </div>
-            <input type="text" name="fecha_viaje" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" name="fecha_viaje" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
         </div>
 
 
@@ -89,15 +89,21 @@
 
 
 
+<br>
+<br>
+<form align="center" action="../login_felipe/home.php" method="get">
+
+    <input type="submit" class="btn btn-outline-info" value="Volver a home">
+</form>
+<br>
+<br>
+</body>
 
 
 
 
 
 
-
-
-<?php include('../templates/footer.html'); ?>
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
