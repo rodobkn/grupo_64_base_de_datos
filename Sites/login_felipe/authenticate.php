@@ -1,7 +1,6 @@
 <?php
-session_start();
-// Change this to your connection info.
-    require('../config/conexion.php');
+    session_start();
+    require('conexion.php');
 
     $username = $_POST['username'];
     $password = $_POST['password'];
