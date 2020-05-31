@@ -67,17 +67,7 @@
 
 <?php include('../templates/footer_busqueda_tickets.html'); ?>
 
-<br>
-<br>
-<form align="center" action="../login_felipe/home.php" method="get">
-
-    <input type="submit" class="btn btn-outline-info" value="Volver a home">
-</form>
-<br>
-<br>
-</body>
-
-</html>
+<?php include('../templates/footer.html'); ?>
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>

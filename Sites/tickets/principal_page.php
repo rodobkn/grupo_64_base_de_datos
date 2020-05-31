@@ -85,23 +85,7 @@
 
 
 
-
-
-
-
-<br>
-<br>
-<form align="center" action="../login_felipe/home.php" method="get">
-
-    <input type="submit" class="btn btn-outline-info" value="Volver a home">
-</form>
-<br>
-<br>
-</body>
-
-
-
-
+<?php include('../templates/footer.html'); ?>
 
 
 
