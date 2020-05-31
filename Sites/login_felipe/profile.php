@@ -242,7 +242,7 @@
 
 <br>
 <br>
-<form align="center" action="home.php" method="get">
+<form align="center" action="home_real.php" method="get">
     <input type="submit" class="btn btn-outline-info" value="Volver a Home">
 </form>
 <br>
