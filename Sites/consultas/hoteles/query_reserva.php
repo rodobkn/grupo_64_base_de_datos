@@ -5,23 +5,30 @@
 
 <?php
 
-
-    $id_usuario = $_POST['id_usuario'];
     $fecha_1 = $_POST['fecha_1'];
     $fecha_2 = $_POST['fecha_2'];
 
+    $user_id = $_SESSION['uid'];
 
     $array_recibido = $_SESSION['array'];
     $id_hotel = $array_recibido[0];
     $id_reserva = $array_recibido[1];
 
+  #Llama a conexión, crea el objeto PDO y obtiene la variable $db
+  require("../../config/conexion.php");
+
+
+ 	$query = "INSERT INTO reservas (rid, fechainicio, fechatermino, uid, hid) 
+   VALUES ($id_reserva, '$fecha_1', '$fecha_2', $user_id, $id_hotel);";
+	$result = $db_impar -> prepare($query);
+	$result -> execute();
 
   ?>
 
 <br>
 <br>
 
-<b> <?php echo "$id_usuario " ?></b>
+<b> <?php echo "$user_id " ?></b>
 <b> <?php echo "$fecha_1 " ?></b>
 <b> <?php echo "$fecha_2 " ?></b>
 <b> <?php echo "$id_hotel " ?></b>

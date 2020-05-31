@@ -149,7 +149,6 @@
 
 				foreach ($info_entrada as $entrada) {
                     $fecha_compra = $entrada[0];
-                    $fecha_compra = date('Y-m-d');
                     
 
                     foreach($info_museo as $museo){

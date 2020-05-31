@@ -99,13 +99,6 @@
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Usuario_id</span>
-            </div>
-            <input type="text" name="id_usuario" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
-        </div>
-
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Fecha de inicio de la reserva</span>
             </div>
             <input type="text" name="fecha_1" class="form-control"  aria-label="Username" aria-describedby="basic-addon1" required>
