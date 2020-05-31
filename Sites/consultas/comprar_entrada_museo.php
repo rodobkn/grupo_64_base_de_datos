@@ -37,18 +37,13 @@
 <br>
 <br>
 
-<b> <?php echo "$id_entrega" ?> </b>
-<b> <?php echo "$user_id" ?> </b>
-<b> <?php echo "$id_lugar" ?> </b>
-<b> <?php echo "$fecha_de_compra" ?> </b>
-
-
-
-
-
-
-
-
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Compra de entrada a Museo exitosa!
+        </div>
+    </div>
+</div>
 
 
 
