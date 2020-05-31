@@ -70,6 +70,17 @@ if (!isset($_SESSION['loggedin'])) {
             
           </form>
 
+          <br>
+          <br>
+
+          <h4>4) Itinerarios(procedimientos almacenados).</h4>
+
+          <form align="center" action="../itinerarios/seleccionar_artistas.php" method="post">
+
+            <input type="submit" class="btn btn-outline-dark" value="Ver itinerarios">
+            
+          </form>
+
 
         </div>
       </div>
