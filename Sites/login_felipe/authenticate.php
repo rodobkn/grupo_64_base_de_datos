@@ -30,15 +30,15 @@ session_start();
             $_SESSION['correo'] = $usuario_linea[0][3];
             $_SESSION['direccion'] = $usuario_linea[0][4];
     
-            header('Location: home.php'); 
+            include('home.php');
         }
         else{
-            header('Location: aviso_baja_login.php');
+            include('aviso_baja_login.php');
         }
 
     }
     else{
         #echo "USUARIO NO ESTÁ REGISTRADO EN LA BD:".'<br>';
-        header('Location: no_existe_home.php');
+        include('no_existe_home.php');
     }
     ?>
