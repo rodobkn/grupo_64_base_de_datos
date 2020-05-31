@@ -165,13 +165,6 @@
 
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Usuario_id</span>
-            </div>
-            <input type="text" name="id_usuario" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Número de asiento</span>
             </div>
             <input type="text" name="numero_de_asiento" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">

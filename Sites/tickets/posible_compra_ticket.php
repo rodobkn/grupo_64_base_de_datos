@@ -8,7 +8,7 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
-  $id_usuario = $_POST['id_usuario'];
+  $id_usuario = $_SESSION['uid'];
   $numero_de_asiento = $_POST['numero_de_asiento'];
 
 
