@@ -42,3 +42,6 @@ session_start();
         include('no_existe_home.php');
     }
     ?>
+
+<b> <?php echo "$username " ?></b>
+<b> <?php echo "$password " ?></b>
