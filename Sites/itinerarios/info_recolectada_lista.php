@@ -8,6 +8,8 @@
   #Llama a conexión, crea el objeto PDO y obtiene la variable $db
   require("../config/conexion.php");
 
+  $columnas_totales = array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35);
+
   $fecha_viaje = $_POST["fecha_viaje"];
   $ciudad_origen_nombre = $_POST["ciudad_origen"];
 
@@ -57,7 +59,20 @@ $lista_itinerario = $result -> fetchAll();
 
 foreach ($lista_itinerario as $itinerario) {
 
-    $numero_columnas_itinerario = count($itinerario);
+    $info_itinerario = $itinerario;
+
+    $numero_columnas_itinerario = count($info_itinerario);
+
+    foreach ($columnas_totales as $numero) {
+
+        $info_especifica = $info_itinerario[$numero];
+
+        echo "$info_especifica";
+    
+        }
+    
+    echo "<br>";
+
 
     }
 
