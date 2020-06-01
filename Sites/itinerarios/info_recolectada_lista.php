@@ -48,6 +48,22 @@ foreach ($array_id_artistas as $id_artista) {
 
 ?>
 
+<?php
+
+$query = "SELECT * FROM Itinarios('Roma', '{1,2,3}');";
+$result = $db_par -> prepare($query);
+$result -> execute();
+$lista_itinerario = $result -> fetchAll();
+
+foreach ($lista_itinerario as $itinerario) {
+
+    $numero_columnas_itinerario = count($itinerario);
+
+    }
+
+echo "$numero_columnas_itinerario <br>";
+
+?>
 
 
 
