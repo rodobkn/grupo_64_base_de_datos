@@ -53,68 +53,57 @@ foreach ($array_id_artistas as $id_artista) {
 
     }
 
+
 $array_procedimiento_almacenado .= "}";
 
-$query = "SELECT * FROM Itinarios('$ciudad_origen_nombre', '$array_procedimiento_almacenado');";
+$query = "SELECT * FROM Itinerarios('$ciudad_origen_nombre', '$array_procedimiento_almacenado');";
 $result = $db_par -> prepare($query);
 $result -> execute();
-$lista_itinerario = $result -> fetchAll();
+$lista_itinerario_0_escalas = $result -> fetchAll();
 
-foreach ($lista_itinerario as $itinerario) {
+$query_2 = "SELECT * FROM Itinerarios_1_escala('$ciudad_origen_nombre', '$array_procedimiento_almacenado');";
+$result_2 = $db_par -> prepare($query_2);
+$result_2 -> execute();
+$lista_itinerario_1_escala = $result_2 -> fetchAll();
 
-    $info_itinerario = $itinerario;
+$query_3 = "SELECT * FROM Itinerarios_2_escalas('$ciudad_origen_nombre', '$array_procedimiento_almacenado');";
+$result_3 = $db_par -> prepare($query_3);
+$result_3 -> execute();
+$lista_itinerario_2_escalas = $result_3 -> fetchAll();
 
-    foreach ($columnas_totales as $numero) {
 
-        $info_especifica = $info_itinerario[$numero];
 
-        if (isset($info_especifica)) {
-            $columnas_verdaderas = $columnas_verdaderas + 1;
-        }
-        else{
-        }
-    
-        }
-    
-    break;
+$contador_2 = 0;
+
+foreach ($lista_itinerario_0_escalas as $itinerario) {
+
+    $contador_2 = $contador_2 + 1;
+
+    include('0_escalas.php');
+
     }
 
-if ($columnas_verdaderas == 18) {
-    $tipo_de_tabla=1;
+$contador_2 = 0;
 
-} elseif ($columnas_verdaderas == 12) {
-    $tipo_de_tabla=2;
+foreach ($lista_itinerario_1_escala as $itinerario) {
 
-} elseif ($columnas_verdaderas == 6) {
-    $tipo_de_tabla=3;
+    $contador_2 = $contador_2 + 1;
 
-} else {
-    echo "NO HAY POSIBLES TICKETS <br>";
-}
-
-
-if ($tipo_de_tabla == 1) {
-
-    $contador_2 = 0;
-
-    foreach ($lista_itinerario as $itinerario) {
-
-        $contador_2 = $contador_2 + 1;
-
-        include('2_escalas.php');
-    
-        }
-
-} elseif ($tipo_de_tabla == 2) {
     include('1_escala.php');
 
-} elseif ($tipo_de_tabla == 3) {
-    include('0_escalas.php');
-} else{
+    }
 
-}
+$contador_2 = 0;
 
+foreach ($lista_itinerario_2_escalas as $itinerario) {
 
+    $contador_2 = $contador_2 + 1;
+
+    include('2_escalas.php');
+
+    }
+
+        
 
 ?>
 
