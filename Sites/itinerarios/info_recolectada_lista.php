@@ -53,7 +53,7 @@ foreach ($array_id_artistas as $id_artista) {
 
 <?php
 
-$array_procedimiento_almacenado = '{';
+$array_procedimiento_almacenado = "{";
 
 $contador = 0;
 
@@ -61,11 +61,11 @@ foreach ($array_id_artistas as $id_artista) {
 
     if ($contador == 0){
 
-        $array_procedimiento_almacenado .= '$id_artista';
+        $array_procedimiento_almacenado .= "$id_artista";
     }
     else{
 
-        $array_procedimiento_almacenado .= ',$id_artista';
+        $array_procedimiento_almacenado .= ",$id_artista";
 
     }
 
@@ -73,7 +73,7 @@ foreach ($array_id_artistas as $id_artista) {
 
     }
 
-$array_procedimiento_almacenado .= '}';
+$array_procedimiento_almacenado .= "}";
 
 $query_real = "SELECT * FROM Itinarios('$ciudad_origen_nombre', '$array_procedimiento_almacenado');";
 
