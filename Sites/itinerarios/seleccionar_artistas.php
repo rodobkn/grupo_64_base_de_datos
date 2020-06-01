@@ -7,7 +7,7 @@
   require("../config/conexion.php");
 
     
-    $query = "SELECT nombre_artista FROM Artistas;";
+    $query = "SELECT id_artista, nombre_artista FROM artistas;";
 	$result = $db_par -> prepare($query);
 	$result -> execute();
 	$artistas = $result -> fetchAll();
@@ -26,9 +26,10 @@
 
     <?php
     foreach ($artistas as $artista) {
-        $variable = $artista[0];
+        $id_artista = $artista[0];
+        $nombre_artista = $artista[1];
 
-        echo "<input type='checkbox' value='$variable' name='artistas[]'> $variable <br/>";
+        echo "<input type='checkbox' value='$id_artista' name='artistas[]'> $nombre_artista <br/>";
     }
     ?>
 

@@ -9,9 +9,10 @@
   require("../config/conexion.php");
 
   $fecha_viaje = $_POST["fecha_viaje"];
-  $ciudad_origen_id = $_POST["ciudad_origen"];
+  $ciudad_origen_nombre = $_POST["ciudad_origen"];
 
-  $array_nombre_artistas = $_SESSION['array_3'];
+  $array_id_artistas = $_SESSION['array_3'];
+  $array_nombre_artistas = $_SESSION['array_4'];
 
 
   ?>
@@ -20,13 +21,27 @@
 <br>
 
 <b> <?php echo "$fecha_viaje" ?></b> <br>
-<b> <?php echo "$ciudad_origen_id" ?></b> <br>
+<b> <?php echo "$ciudad_origen_nombre" ?></b> <br>
 
 <?php
 
 foreach ($array_nombre_artistas as $nombre_artista) {
 
     echo "$nombre_artista <br>";
+
+    }
+
+
+?>
+
+<br>
+<br>
+
+<?php
+
+foreach ($array_id_artistas as $id_artista) {
+
+    echo "$id_artista <br>";
 
     }
 

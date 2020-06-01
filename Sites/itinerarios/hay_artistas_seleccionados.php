@@ -1,3 +1,4 @@
+<?php $array_id_artistas = [];?>
 <?php $array_nombre_artistas = [];?>
 
 <div class="container">
@@ -21,10 +22,23 @@
 				
 				<?php
 				foreach ($artistas as $key => $value) {
-                    $valor = $value;
-                    array_push($array_nombre_artistas, $valor);
+                    $id_artista = $value;
+                    array_push($array_id_artistas, $id_artista);
 
-					echo "<tr> <td>  $valor  </td> </tr>";
+                    $query = "SELECT nombre_artista FROM artistas WHERE id_artista=$id_artista;";
+                    $result = $db_par -> prepare($query);
+                    $result -> execute();
+                    $lista_nombre_artista = $result -> fetchAll();
+
+                    foreach ($lista_nombre_artista as $artista){
+
+                        $nombre_artista = $artista[0];
+                    }
+
+
+                    array_push($array_nombre_artistas, $nombre_artista);
+
+					echo "<tr> <td>  $nombre_artista  </td> </tr>";
 				}
 				?>
 
@@ -37,7 +51,8 @@
 	</div>
 </div>
 
-<?php $_SESSION['array_3'] = $array_nombre_artistas; ?>
+<?php $_SESSION['array_3'] = $array_id_artistas; ?>
+<?php $_SESSION['array_4'] = $array_nombre_artistas; ?>
 
 <br>
 <br>
@@ -74,7 +89,7 @@
                             $ciudad_id = $ciudad[0];
                             $nombre_ciudad = $ciudad[2];
 
-                            echo "<option value=" . $ciudad_id . "> $nombre_ciudad </option>";
+                            echo "<option value=" . $nombre_ciudad . "> $nombre_ciudad </option>";
                         }
                 ?>
 
