@@ -27,7 +27,7 @@
 
   <div class="card">
       <div class="card-header">
-          A continuación se mostrarán todos los hoteles que tenemos disponibles. Si quiere hacer una <b>reserva</b> o simplemente más información
+          A continuación se mostrarán el/los hotele/s indicados en tu búsqueda. Si quiere hacer una <b>reserva</b> o simplemente más información
           acerca de un hotel, haga <b>click</b> sobre este:
       </div>
 

@@ -22,7 +22,8 @@
 
 	<div class="card">
 		<div class="card-header">
-			A continuación se mostrarán todos los artistas contenidos en nuestra base de datos.
+			A continuación se mostrará/n los artistas indicado/s en tu búsqueda. Si quiere más información acerca de un artista, 
+			simplemente haga click sobre su nombre.
 		</div>
 
 		<div class="card-body">
