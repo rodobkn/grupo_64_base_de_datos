@@ -18,7 +18,9 @@ WHERE Artistas_Obras.id_artista = ANY($2)
 AND Artistas_Obras.id_obra = Obras.id_obra
 AND Obras.id_obra = Lugares_Obras.id_obra
 AND Lugares_Obras.id_lugar = Lugares.id_lugar
-AND Lugares.id_lugar = Lugares_Ciudades.id_lugar);
+AND Lugares.id_lugar = Lugares_Ciudades.id_lugar)
+
+ORDER BY precio;
 
 RETURN;
 
