@@ -23,34 +23,6 @@
 <br>
 <br>
 
-<b> <?php echo "$fecha_viaje" ?></b> <br>
-<b> <?php echo "$ciudad_origen_nombre" ?></b> <br>
-
-<?php
-
-foreach ($array_nombre_artistas as $nombre_artista) {
-
-    echo "$nombre_artista <br>";
-
-    }
-
-
-?>
-
-<br>
-<br>
-
-<?php
-
-foreach ($array_id_artistas as $id_artista) {
-
-    echo "$id_artista <br>";
-
-    }
-
-
-?>
-
 <div class="container">
     <div class="card">
         <div class="card-header">
