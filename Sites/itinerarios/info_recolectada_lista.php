@@ -67,7 +67,12 @@ foreach ($lista_itinerario as $itinerario) {
 
         $info_especifica = $info_itinerario[$numero];
 
-        echo "$info_especifica";
+        if (isset($info_especifica)) {
+            echo "$info_especifica";
+        }
+        else{
+            echo "N";
+        }
     
         }
     
