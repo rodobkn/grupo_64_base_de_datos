@@ -1,5 +1,5 @@
 
-CREATE or REPLACE Function Itinarios(C varchar, Artistas integer[])
+CREATE or REPLACE Function Itinerarios_2_escalas(C varchar, Artistas integer[])
 
 RETURNS TABLE (id_viaje_1 int, id_ciudad_origen_1 int, id_ciudad_destino_1 int, horario_viaje_1 time, duracion_viaje_1 int, precio_viaje_1 int, id_viaje_2 int, id_ciudad_origen_2 int, id_ciudad_destino_2 int, horario_viaje_2 time, duracion_viaje_2 int, precio_viaje_2 int, id_viaje_3 int, id_ciudad_origen_3 int, id_ciudad_destino_3 int, horario_viaje_3 time, duracion_viaje_3 int, precio_viaje_3 int) AS
 $$

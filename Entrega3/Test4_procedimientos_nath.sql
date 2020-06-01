@@ -1,5 +1,5 @@
 
-CREATE or REPLACE Function Itinarios(C varchar, Artistas integer[])
+CREATE or REPLACE Function Itinerarios(C varchar, Artistas integer[])
 
 RETURNS TABLE (id_viaje int, id_ciudad_origen int, id_ciudad_destino int, horario time, duracion real, precio real) AS
 $$

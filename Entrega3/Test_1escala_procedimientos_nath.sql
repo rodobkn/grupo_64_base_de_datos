@@ -1,17 +1,17 @@
 
-CREATE or REPLACE Function Itinarios(C varchar, Artistas integer[])
+CREATE or REPLACE Function Itinerarios_1_escala(C varchar, Artistas integer[])
 
 RETURNS TABLE (id_viaje_1 int, id_ciudad_origen_1 int, id_ciudad_destino_1 int, horario_viaje_1 time, duracion_viaje_1 int, precio_viaje_1 int, id_viaje_2 int, id_ciudad_origen_2 int, id_ciudad_destino_2 int, horario_viaje_2 time, duracion_viaje_2 int, precio_viaje_2 int) AS
 $$
 
 BEGIN 
 
-PERFORM * FROM dblink_connect('test5_connexion','dbname=grupo87e3 user=grupo87 password=sarahfelipe');
+PERFORM * FROM dblink_connect('test4_connexion','dbname=grupo87e3 user=grupo87 password=sarahfelipe');
 
 RETURN QUERY
 
-SELECT * FROM dblink('test5_connexion', 'select did, cidorigen, ciddestino, horario, duracion, dprecio from destinos') AS t1(id_viaje_1 int, id_ciudad_origen_1 int, id_ciudad_destino_1 int, horario_1 time, duracion_1 int, precio_1 int),
- dblink('test5_connexion', 'select did, cidorigen, ciddestino, horario, duracion, dprecio from destinos') AS t2(id_viaje_2 int, id_ciudad_origen_2 int, id_ciudad_destino_2 int, horario_2 time, duracion_2 int, precio_2 int)
+SELECT * FROM dblink('test4_connexion', 'select did, cidorigen, ciddestino, horario, duracion, dprecio from destinos') AS t1(id_viaje_1 int, id_ciudad_origen_1 int, id_ciudad_destino_1 int, horario_1 time, duracion_1 int, precio_1 int),
+ dblink('test4_connexion', 'select did, cidorigen, ciddestino, horario, duracion, dprecio from destinos') AS t2(id_viaje_2 int, id_ciudad_origen_2 int, id_ciudad_destino_2 int, horario_2 time, duracion_2 int, precio_2 int)
 
 WHERE t1.id_ciudad_destino_1= t2.id_ciudad_origen_2
 

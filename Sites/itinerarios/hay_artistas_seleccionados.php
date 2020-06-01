@@ -1,4 +1,4 @@
-<?php $array_id_artistas = [];?>
+﻿<?php $array_id_artistas = [];?>
 <?php $array_nombre_artistas = [];?>
 
 <div class="container">
