@@ -9,6 +9,7 @@
   require("../config/conexion.php");
 
   $columnas_totales = array(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35);
+  $columnas_verdaderas = 0;
 
   $fecha_viaje = $_POST["fecha_viaje"];
   $ciudad_origen_nombre = $_POST["ciudad_origen"];
@@ -69,6 +70,7 @@ foreach ($lista_itinerario as $itinerario) {
 
         if (isset($info_especifica)) {
             echo "$info_especifica";
+            $columnas_verdaderas = $columnas_verdaderas + 1;
         }
         else{
             echo "N";
@@ -78,10 +80,13 @@ foreach ($lista_itinerario as $itinerario) {
     
     echo "<br>";
 
+    break;
+
 
     }
 
 echo "$numero_columnas_itinerario <br>";
+echo "$columnas_verdaderas <br>";
 
 ?>
 
