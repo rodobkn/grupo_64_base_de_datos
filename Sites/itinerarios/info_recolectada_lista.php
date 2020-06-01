@@ -75,6 +75,8 @@ $lista_itinerario_2_escalas = $result_3 -> fetchAll();
 
 $contador_2 = 0;
 
+echo "<h2>Itinerarios con 0 escalas</h2>";
+
 foreach ($lista_itinerario_0_escalas as $itinerario) {
 
     $contador_2 = $contador_2 + 1;
@@ -85,6 +87,8 @@ foreach ($lista_itinerario_0_escalas as $itinerario) {
 
 $contador_2 = 0;
 
+echo "<h2>Itinerarios con 1 escala</h2>";
+
 foreach ($lista_itinerario_1_escala as $itinerario) {
 
     $contador_2 = $contador_2 + 1;
@@ -94,6 +98,8 @@ foreach ($lista_itinerario_1_escala as $itinerario) {
     }
 
 $contador_2 = 0;
+
+echo "<h2>Itinerarios con 2 escalas</h2>";
 
 foreach ($lista_itinerario_2_escalas as $itinerario) {
 
