@@ -53,6 +53,30 @@ foreach ($array_id_artistas as $id_artista) {
 
 <?php
 
+$array_procedimiento_almacenado = '{';
+
+$contador = 0;
+
+foreach ($array_id_artistas as $id_artista) {
+
+    if ($contador == 0){
+
+        $array_procedimiento_almacenado .= '$id_artista';
+    }
+    else{
+
+        $array_procedimiento_almacenado .= ',$id_artista';
+
+    }
+
+    $contador = $contador + 1;
+
+    }
+
+$array_procedimiento_almacenado .= '}';
+
+$query_real = "SELECT * FROM Itinarios('$ciudad_origen_nombre', '$array_procedimiento_almacenado');"
+
 $query = "SELECT * FROM Itinarios('Roma', '{1,2,3}');";
 $result = $db_par -> prepare($query);
 $result -> execute();
@@ -62,35 +86,40 @@ foreach ($lista_itinerario as $itinerario) {
 
     $info_itinerario = $itinerario;
 
-    $numero_columnas_itinerario = count($info_itinerario);
-
     foreach ($columnas_totales as $numero) {
 
         $info_especifica = $info_itinerario[$numero];
 
         if (isset($info_especifica)) {
-            echo "$info_especifica";
             $columnas_verdaderas = $columnas_verdaderas + 1;
         }
         else{
-            echo "N";
         }
     
         }
     
-    echo "<br>";
-
     break;
-
-
     }
 
-echo "$numero_columnas_itinerario <br>";
-echo "$columnas_verdaderas <br>";
+if ($columnas_verdaderas == 18) {
+    $tipo_de_tabla=1;
+
+} elseif ($columnas_verdaderas == 12) {
+    $tipo_de_tabla=2;
+
+} elseif ($columnas_verdaderas == 6) {
+    $tipo_de_tabla=3;
+
+} else {
+    echo "HUBO UN ERROR EN EL CALCULO DE COLUMNAS <br>";
+}
+
+
 
 ?>
 
-
+<b> <?php echo "$query" ?></b> <br>
+<b> <?php echo "$query_real" ?></b> <br>
 
 
 
