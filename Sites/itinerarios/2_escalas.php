@@ -1,3 +1,11 @@
+<?php 
+$precio_1 = $itinerario[5];
+$precio_2 = $itinerario[11];
+$precio_3 = $itinerario[17];
+
+$precio_total = $precio_1 + $precio_2 + $precio_3;
+?>
+
 
 <br>
 
@@ -6,6 +14,7 @@
   <div class="card">
       <div class="card-header">
           Itinerario N°<b> <?php echo "$contador_2" ?></b> <br>
+          Precio Total: <b> <?php echo "$precio_total" ?></b> <br>
       </div>
 
       <div class="card-body">
@@ -14,7 +23,7 @@
       <table class="table">
           <thead class="thead-dark">
           <tr>
-              <th scope="col">id_viaje</th>
+              <th scope="col">Viaje</th>
               <th scope="col">Ciudad de origen</th>
               <th scope="col">Ciudad de destino</th>
               <th scope="col">Horario</th>
@@ -32,21 +41,18 @@
                 $id_c_destino_1 = $itinerario[2];
                 $horario_1 = $itinerario[3];
                 $duracion_1 = $itinerario[4];
-                $precio_1 = $itinerario[5];
 
                 $id_viaje_2 = $itinerario[6];
                 $id_c_origen_2 = $itinerario[7];
                 $id_c_destino_2 = $itinerario[8];
                 $horario_2 = $itinerario[9];
                 $duracion_2 = $itinerario[10];
-                $precio_2 = $itinerario[11];
 
                 $id_viaje_3 = $itinerario[12];
                 $id_c_origen_3 = $itinerario[13];
                 $id_c_destino_3 = $itinerario[14];
                 $horario_3 = $itinerario[15];
                 $duracion_3 = $itinerario[16];
-                $precio_3 = $itinerario[17];
 
                 $query = "SELECT cnombre FROM ciudades WHERE cid=$id_c_origen_1;";
                 $result = $db_impar -> prepare($query);
@@ -115,13 +121,16 @@
                     }
 
 
-                echo "<tr> <td> viaje $id_viaje_1 </td> <td>  $nombre_c_origen_1 </td> <td>  $nombre_c_destino_1 </td> 
+                echo "<tr> <td> <a href='../tickets/destino_especifico.php?id_destino=$id_viaje_1&fecha_viaje=$fecha_viaje&n_ciudad_origen=$nombre_c_origen_1&n_ciudad_destino=$nombre_c_destino_1'> viaje $id_viaje_1 </a> </td> 
+                <td>  $nombre_c_origen_1 </td> <td>  $nombre_c_destino_1 </td> 
                 <td> $horario_1 horas </td> <td>  $duracion_1 </td> <td>  $precio_1 </td> </tr>";
 
-                echo "<tr> <td> viaje $id_viaje_2 </td> <td>  $nombre_c_origen_2 </td> <td>  $nombre_c_destino_2 </td> 
+                echo "<tr> <td> <a href='../tickets/destino_especifico.php?id_destino=$id_viaje_2&fecha_viaje=$fecha_viaje&n_ciudad_origen=$nombre_c_origen_2&n_ciudad_destino=$nombre_c_destino_2'> viaje $id_viaje_2 </a> </td> 
+                <td>  $nombre_c_origen_2 </td> <td>  $nombre_c_destino_2 </td> 
                 <td> $horario_2 horas </td> <td>  $duracion_2 </td> <td>  $precio_2 </td> </tr>";
 
-                echo "<tr> <td> viaje $id_viaje_3 </td> <td>  $nombre_c_origen_3 </td> <td>  $nombre_c_destino_3 </td> 
+                echo "<tr> <td> <a href='../tickets/destino_especifico.php?id_destino=$id_viaje_3&fecha_viaje=$fecha_viaje&n_ciudad_origen=$nombre_c_origen_3&n_ciudad_destino=$nombre_c_destino_3'> viaje $id_viaje_3 </a> </td> 
+                <td>  $nombre_c_origen_3 </td> <td>  $nombre_c_destino_3 </td> 
                 <td> $horario_3 horas </td> <td>  $duracion_3 </td> <td>  $precio_3 </td> </tr>";
 
 
