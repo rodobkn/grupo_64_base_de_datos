@@ -1,0 +1,1 @@
+<h1>Magicamente hay 1 escala</h1>

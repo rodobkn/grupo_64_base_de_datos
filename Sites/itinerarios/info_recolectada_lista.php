@@ -51,6 +51,14 @@ foreach ($array_id_artistas as $id_artista) {
 
 ?>
 
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Usted está buscando viaje para la siguiente fecha: <b> <?php echo "$fecha_viaje" ?></b>
+        </div>
+    </div>
+</div>
+
 <?php
 
 $array_procedimiento_almacenado = "{";
@@ -75,9 +83,7 @@ foreach ($array_id_artistas as $id_artista) {
 
 $array_procedimiento_almacenado .= "}";
 
-$query_real = "SELECT * FROM Itinarios('$ciudad_origen_nombre', '$array_procedimiento_almacenado');";
-
-$query = "SELECT * FROM Itinarios('Roma', '{1,2,3}');";
+$query = "SELECT * FROM Itinarios('$ciudad_origen_nombre', '$array_procedimiento_almacenado');";
 $result = $db_par -> prepare($query);
 $result -> execute();
 $lista_itinerario = $result -> fetchAll();
@@ -111,15 +117,36 @@ if ($columnas_verdaderas == 18) {
     $tipo_de_tabla=3;
 
 } else {
-    echo "HUBO UN ERROR EN EL CALCULO DE COLUMNAS <br>";
+    echo "NO HAY POSIBLES TICKETS <br>";
+}
+
+
+if ($tipo_de_tabla == 1) {
+
+    $contador_2 = 0;
+
+    foreach ($lista_itinerario as $itinerario) {
+
+        $contador_2 = $contador_2 + 1;
+
+        include('2_escalas.php');
+    
+        }
+
+} elseif ($tipo_de_tabla == 2) {
+    include('1_escala.php');
+
+} elseif ($tipo_de_tabla == 3) {
+    include('0_escalas.php');
+} else{
+
 }
 
 
 
 ?>
 
-<b> <?php echo "$query" ?></b> <br>
-<b> <?php echo "$query_real" ?></b> <br>
+
 
 
 
