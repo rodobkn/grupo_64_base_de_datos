@@ -75,7 +75,7 @@ foreach ($array_id_artistas as $id_artista) {
 
 $array_procedimiento_almacenado .= '}';
 
-$query_real = "SELECT * FROM Itinarios('$ciudad_origen_nombre', '$array_procedimiento_almacenado');"
+$query_real = "SELECT * FROM Itinarios('$ciudad_origen_nombre', '$array_procedimiento_almacenado');";
 
 $query = "SELECT * FROM Itinarios('Roma', '{1,2,3}');";
 $result = $db_par -> prepare($query);
