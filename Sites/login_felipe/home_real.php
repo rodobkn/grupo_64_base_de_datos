@@ -88,6 +88,52 @@ if (!isset($_SESSION['loggedin'])) {
     </div>
   </section>
 
+  <section id="services" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Creatividad de la página</h2>
+          <p class="lead">En esta sección podrás buscar artistas y hoteles por su nombre con un <b>buscador case sensitive</b>.</p>
+
+          <h3>1) Buscar Artistas por su nombre.</h3>
+
+          <form align="center" action="../consultas/consulta_por_artista_creatividad.php" method="post">
+            <br>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Artista</span>
+              </div>
+              <input type="text" name="nombre_artista" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <br/>
+            <input type="submit" class="btn btn-outline-dark" value="Buscar">
+          </form>
+          <br>
+          <br>
+
+          <h3>2) Buscar hoteles por su nombre</h3>
+            
+          <form align="center" action="../consultas/hoteles/index_hoteles_creatividad.php" method="post">
+            <br>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Hotel</span>
+              </div>
+              <input type="text" name="nombre_hotel" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <br>
+
+            <input type="submit" class="btn btn-outline-info" value="Buscar">
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 
 
