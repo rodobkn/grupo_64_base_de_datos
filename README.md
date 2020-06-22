@@ -1,1 +1,0 @@
-# grupo_64_base_de_datos
